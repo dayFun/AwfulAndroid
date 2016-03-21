@@ -10,7 +10,7 @@
         android:label="@string/app_name"
         android:icon="@mipmap/ic_launcher"
         android:supportsRtl="false"
-        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        android:theme="@style/AppTheme">
 
         <activity
             android:name=".LoginActivity"
@@ -21,6 +21,12 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".ReadTextActivity"
+            android:label="@string/title_activity_read_text"
+            android:parentActivityName=".LoginActivity" >
         </activity>
     </application>
 
