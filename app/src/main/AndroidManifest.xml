@@ -23,11 +23,6 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".ReadTextActivity"
-            android:label="@string/title_activity_read_text"
-            android:parentActivityName=".LoginActivity" >
-        </activity>
     </application>
 
 </manifest>
