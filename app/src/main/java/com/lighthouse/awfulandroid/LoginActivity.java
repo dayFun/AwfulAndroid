@@ -1,12 +1,14 @@
 package com.lighthouse.awfulandroid;
 
 import android.app.AlertDialog;
-import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.NavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -18,14 +20,14 @@ public class LoginActivity extends AppCompatActivity {
 
     @Bind(R.id.toolbar)
     Toolbar toolbar;
-//    @Bind(R.id.fab)
-//    FloatingActionButton fab;
     @Bind(R.id.validateButton)
     Button validateButton;
     @Bind(R.id.stuck_button)
     Button stuckButton;
     @Bind(R.id.nameEditText)
     EditText nameEditText;
+    @Bind(R.id.design_navigation_view)
+    NavigationView navigationDrawer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,14 +36,6 @@ public class LoginActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         setSupportActionBar(toolbar);
-
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
 
 
 //        setBadTimeZone();
@@ -58,11 +52,19 @@ public class LoginActivity extends AppCompatActivity {
         WidgetObservable.text(nameEditText)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(onTextChangeEvent -> {
-                            if (checkName(onTextChangeEvent.text().toString())) {
+                            String enteredName = onTextChangeEvent.text().toString();
+                            if (checkName(enteredName)) {
                                 validateButton.setEnabled(true);
+                                updateUsername(enteredName);
                             }
                         }
                 );
+    }
+
+    private void updateUsername(String enteredName) {
+        View header = navigationDrawer.getHeaderView(0);
+        TextView userName = (TextView) header.findViewById(R.id.drawer_user_name_text_view);
+        userName.setText(enteredName);
     }
 
     private Boolean checkName(String enteredName) {
