@@ -71,8 +71,7 @@ public class LoginActivity extends AppCompatActivity {
 
     @OnClick(R.id.validateButton)
     public void validate() {
-        Intent startReadTextActivity = new Intent(this, ReadTextActivity.class);
-        startActivity(startReadTextActivity);
+
     }
 
     @OnClick(R.id.stuck_button)
