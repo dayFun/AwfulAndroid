@@ -32,6 +32,8 @@ public class LoginActivityTest  {
 
     @Test
     public void testValidateButtonDisplayedAndDisabledByDefault() throws Exception {
+
+
         onView(withId(R.id.validateButton))
                 .check(matches(allOf(
                         not(isEnabled()),
