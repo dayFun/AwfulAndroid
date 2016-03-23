@@ -69,7 +69,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private Boolean checkName(String enteredName) {
-        return enteredName.matches("^[A-Za-z]+\\.[A-Za-z]+");
+        return NameValidator.checkName(enteredName);
     }
 
     @OnClick(R.id.validateButton)
