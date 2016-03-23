@@ -22,11 +22,11 @@ public class LoginActivity extends AppCompatActivity {
     Toolbar toolbar;
     @Bind(R.id.validateButton)
     Button validateButton;
-    @Bind(R.id.stuck_button)
+    @Bind(R.id.stuckButton)
     Button stuckButton;
     @Bind(R.id.nameEditText)
     EditText nameEditText;
-    @Bind(R.id.design_navigation_view)
+    @Bind(R.id.options_drawer)
     NavigationView navigationDrawer;
 
     @Override
@@ -37,9 +37,10 @@ public class LoginActivity extends AppCompatActivity {
 
         setSupportActionBar(toolbar);
 
+        createEditTextObservable();
+
 
 //        setBadTimeZone();
-        createEditTextObservable();
     }
 
 
@@ -76,7 +77,7 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    @OnClick(R.id.stuck_button)
+    @OnClick(R.id.stuckButton)
     public void stuckHint() {
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
         dialogBuilder.setTitle("Stuck?")
