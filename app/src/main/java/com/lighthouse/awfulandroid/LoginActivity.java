@@ -26,8 +26,6 @@ public class LoginActivity extends AppCompatActivity {
     Button stuckButton;
     @Bind(R.id.name_edit_text)
     EditText nameEditText;
-    @Bind(R.id.options_drawer)
-    NavigationView navigationDrawer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,14 +36,7 @@ public class LoginActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         createEditTextObservable();
-//        setBadTimeZone();
     }
-
-
-//    private void setBadTimeZone() {
-//        AlarmManager alarmManager = (AlarmManager) getApplicationContext().getSystemService(Context.ALARM_SERVICE);
-//        alarmManager.setTimeZone("Europe/London");
-//    }
 
     private void createEditTextObservable() {
         WidgetObservable.text(nameEditText)
@@ -54,16 +45,9 @@ public class LoginActivity extends AppCompatActivity {
                             String enteredName = onTextChangeEvent.text().toString();
                             if (checkName(enteredName)) {
                                 validateButton.setEnabled(true);
-                                updateUsername(enteredName);
                             }
                         }
                 );
-    }
-
-    private void updateUsername(String enteredName) {
-        View header = navigationDrawer.getHeaderView(0);
-        TextView userName = (TextView) header.findViewById(R.id.drawer_user_name_text_view);
-        userName.setText(enteredName);
     }
 
     private Boolean checkName(String enteredName) {
