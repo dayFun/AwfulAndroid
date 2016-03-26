@@ -20,11 +20,11 @@ public class LoginActivity extends AppCompatActivity {
 
     @Bind(R.id.toolbar)
     Toolbar toolbar;
-    @Bind(R.id.validateButton)
+    @Bind(R.id.validate_button)
     Button validateButton;
     @Bind(R.id.stuckButton)
     Button stuckButton;
-    @Bind(R.id.nameEditText)
+    @Bind(R.id.name_edit_text)
     EditText nameEditText;
     @Bind(R.id.options_drawer)
     NavigationView navigationDrawer;
@@ -70,7 +70,7 @@ public class LoginActivity extends AppCompatActivity {
         return NameValidator.checkName(enteredName);
     }
 
-    @OnClick(R.id.validateButton)
+    @OnClick(R.id.validate_button)
     public void validate() {
 
     }
@@ -81,7 +81,7 @@ public class LoginActivity extends AppCompatActivity {
         dialogBuilder.setTitle("Stuck?")
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .setMessage(R.string.stuck_hint_text)
-                .setCancelable(true)
+                .setCancelable(false)
                 .setPositiveButton(R.string.stuck_button_got_it, (dialog, which) -> dialog.cancel());
 
         AlertDialog stuckDialog = dialogBuilder.create();

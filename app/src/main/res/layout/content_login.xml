@@ -18,6 +18,7 @@
         android:paddingTop="@dimen/activity_vertical_margin">
 
         <TextView
+            android:id="@+id/welcome_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -34,7 +35,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/nameEditText"
+            android:id="@+id/name_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -44,7 +45,7 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/validateButton"
+                android:id="@+id/validate_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
