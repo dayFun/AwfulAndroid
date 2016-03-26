@@ -9,13 +9,6 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import static android.support.test.espresso.Espresso.onView;
-import static android.support.test.espresso.action.ViewActions.click;
-import static android.support.test.espresso.action.ViewActions.typeText;
-import static android.support.test.espresso.assertion.ViewAssertions.matches;
-import static android.support.test.espresso.matcher.ViewMatchers.isEnabled;
-import static android.support.test.espresso.matcher.ViewMatchers.withId;
-import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static com.lighthouse.awfulandroid.util.LoginActivityHelper.assertButtonDisplayed;
 import static com.lighthouse.awfulandroid.util.LoginActivityHelper.assertButtonEnabled;
 import static com.lighthouse.awfulandroid.util.LoginActivityHelper.assertStuckDialogDisplayed;
@@ -23,9 +16,6 @@ import static com.lighthouse.awfulandroid.util.LoginActivityHelper.assertWelcome
 import static com.lighthouse.awfulandroid.util.LoginActivityHelper.clickStuckButton;
 import static com.lighthouse.awfulandroid.util.LoginActivityHelper.closeStuckDialog;
 import static com.lighthouse.awfulandroid.util.LoginActivityHelper.enterName;
-import static org.hamcrest.Matchers.allOf;
-import static org.hamcrest.Matchers.not;
-import static org.hamcrest.core.Is.is;
 
 @RunWith(AndroidJUnit4.class)
 @LargeTest
