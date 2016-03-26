@@ -8,8 +8,8 @@ import android.support.v7.widget.Toolbar;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.lighthouse.awfulandroid.QualityAssuranceActivities;
 import com.lighthouse.awfulandroid.R;
+import com.lighthouse.awfulandroid.interview_activities.QualityAssuranceActivities;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
