@@ -13,7 +13,7 @@ import com.lighthouse.awfulandroid.instructions.InstructionPageFragment;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class QualityAssuranceActivities extends AppCompatActivity {
+public class InterviewActivities extends AppCompatActivity {
 
 
     private final String[] activities = {"Lorem Ipsum"};
@@ -24,7 +24,7 @@ public class QualityAssuranceActivities extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_qa_activities);
+        setContentView(R.layout.activity_interview_activities);
         ButterKnife.bind(this);
 
         showInstructions();
@@ -43,7 +43,7 @@ public class QualityAssuranceActivities extends AppCompatActivity {
         super.onResume();
         CharSequence userName = getIntent().getCharSequenceExtra("USER_NAME");
 
-        Toast.makeText(QualityAssuranceActivities.this,
+        Toast.makeText(InterviewActivities.this,
                 "Hello, " + userName + "\nLet the games begin!", Toast.LENGTH_SHORT).show();
     }
 }

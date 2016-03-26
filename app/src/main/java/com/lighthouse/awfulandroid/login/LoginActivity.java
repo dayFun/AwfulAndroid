@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.lighthouse.awfulandroid.R;
-import com.lighthouse.awfulandroid.interview_activities.QualityAssuranceActivities;
+import com.lighthouse.awfulandroid.interview_activities.InterviewActivities;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -57,7 +57,7 @@ public class LoginActivity extends AppCompatActivity {
 
     @OnClick(R.id.validate_button)
     public void validate() {
-        Intent intent = new Intent(this, QualityAssuranceActivities.class);
+        Intent intent = new Intent(this, InterviewActivities.class);
         intent.putExtra("USER_NAME", nameEditText.getText());
         startActivity(intent);
     }

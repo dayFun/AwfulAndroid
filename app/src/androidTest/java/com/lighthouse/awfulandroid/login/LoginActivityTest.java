@@ -5,7 +5,6 @@ import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 import android.test.suitebuilder.annotation.LargeTest;
 
-import com.lighthouse.awfulandroid.LoginActivity;
 import com.lighthouse.awfulandroid.R;
 
 import org.junit.Rule;
@@ -93,5 +92,4 @@ public class LoginActivityTest {
 //        closeStuckDialog();
 //        assertStuckDialogDisplayed(false);
 //    }
-
 }

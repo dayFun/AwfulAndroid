@@ -24,7 +24,7 @@
         </activity>
 
         <activity android:name=".login.LoginActivity" />
-        <activity android:name=".interview_activities.QualityAssuranceActivities" />
+        <activity android:name=".interview_activities.InterviewActivities" />
 
     </application>
 
