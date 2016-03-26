@@ -23,6 +23,8 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".QualityAssuranceActivities"/>
+
     </application>
 
 </manifest>

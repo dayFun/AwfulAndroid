@@ -1,5 +1,6 @@
 package com.lighthouse.awfulandroid;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v7.app.AlertDialog;
@@ -56,7 +57,9 @@ public class LoginActivity extends AppCompatActivity {
 
     @OnClick(R.id.validate_button)
     public void validate() {
-
+        Intent intent = new Intent(this, QualityAssuranceActivities.class);
+        intent.putExtra("USER_NAME", nameEditText.getText());
+        startActivity(intent);
     }
 
     @OnClick(R.id.stuckButton)
