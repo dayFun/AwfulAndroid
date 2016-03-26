@@ -1,4 +1,4 @@
-package com.lighthouse.awfulandroid;
+package com.lighthouse.awfulandroid.login;
 
 public class NameValidator {
 
