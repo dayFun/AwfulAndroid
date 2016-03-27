@@ -3,7 +3,6 @@ package com.lighthouse.awfulandroid.instructions;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -56,18 +55,11 @@ public class InstructionPageFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        Log.d("**DEBUG**", "InstructionPageFragment.onCreateView() called with: " + "savedInstanceState = [" + savedInstanceState + "]");
         View view = inflater.inflate(R.layout.fragment_instruction_page, container, false);
         ButterKnife.bind(this, view);
 
         instructionPage.setText(pageText);
         instructionPageContainer.setBackgroundColor(backgroundColor);
-
-//        if(savedInstanceState != null) {
-//            Log.d("**DEBUG**", "InstructionPageFragment: setting background and text");
-//            instructionPageContainer.setBackgroundColor(savedInstanceState.getInt("BACKGROUND_COLOR"));
-//            instructionPage.setText(savedInstanceState.getString("PAGE"));
-//        }
 
         return view;
     }

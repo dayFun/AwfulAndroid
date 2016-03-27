@@ -18,11 +18,9 @@ public class InstructionsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.d("TAG", "InstructionsActivity onCreate() called with: " + "savedInstanceState = [" + savedInstanceState + "]");
         setContentView(R.layout.activity_instructions_pager);
         ButterKnife.bind(this);
 
         instructionsViewpager.setAdapter(new InstructionsPagerAdapter(getSupportFragmentManager()));
-        Log.d("TAG", "setAdapter on viewPager. Pager shown? " + instructionsViewpager.isShown());
     }
 }
