@@ -1,6 +1,8 @@
 package com.lighthouse.awfulandroid.interview_activities;
 
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ArrayAdapter;
@@ -14,7 +16,6 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class InterviewActivities extends AppCompatActivity {
-
 
     private final String[] activities = {"Lorem Ipsum"};
 
@@ -41,9 +42,9 @@ public class InterviewActivities extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        CharSequence userName = getIntent().getCharSequenceExtra("USER_NAME");
-
-        Toast.makeText(InterviewActivities.this,
-                "Hello, " + userName + "\nLet the games begin!", Toast.LENGTH_SHORT).show();
+//        CharSequence userName = getIntent().getCharSequenceExtra("USER_NAME");
+//
+//        Toast.makeText(InterviewActivities.this,
+//                "Hello, " + userName + "\nLet the games begin!", Toast.LENGTH_SHORT).show();
     }
 }

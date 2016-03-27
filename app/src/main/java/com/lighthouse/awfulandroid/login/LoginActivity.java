@@ -1,6 +1,8 @@
 package com.lighthouse.awfulandroid.login;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -57,9 +59,17 @@ public class LoginActivity extends AppCompatActivity {
 
     @OnClick(R.id.validate_button)
     public void validate() {
+        saveUserName();
         Intent intent = new Intent(this, InterviewActivities.class);
-        intent.putExtra("USER_NAME", nameEditText.getText());
+        intent.putExtra("USER_NAME", nameEditText.getText().toString());
         startActivity(intent);
+    }
+
+    private void saveUserName() {
+        SharedPreferences sharedPreferences = getSharedPreferences("AwfulAndroidData", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("FULL_USER_NAME", nameEditText.getText().toString());
+        editor.apply();
     }
 
     @OnClick(R.id.stuckButton)
