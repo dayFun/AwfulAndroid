@@ -1,4 +1,4 @@
-package com.lighthouse.awfulandroid.util;
+package com.lighthouse.awfulandroid.bugs;
 
 import com.lighthouse.awfulandroid.R;
 

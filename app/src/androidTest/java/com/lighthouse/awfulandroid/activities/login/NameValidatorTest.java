@@ -1,4 +1,4 @@
-package com.lighthouse.awfulandroid.login;
+package com.lighthouse.awfulandroid.activities.login;
 
 import junit.framework.TestCase;
 

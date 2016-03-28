@@ -1,9 +1,8 @@
-package com.lighthouse.awfulandroid.instructions;
+package com.lighthouse.awfulandroid.activities.instructions;
 
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 
 import com.lighthouse.awfulandroid.R;
 

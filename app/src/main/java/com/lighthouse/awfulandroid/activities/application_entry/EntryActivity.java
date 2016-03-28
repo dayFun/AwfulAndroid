@@ -1,4 +1,4 @@
-package com.lighthouse.awfulandroid.application_entry;
+package com.lighthouse.awfulandroid.activities.application_entry;
 
 import android.content.Context;
 import android.content.Intent;
@@ -6,9 +6,9 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import com.lighthouse.awfulandroid.instructions.InstructionsActivity;
-import com.lighthouse.awfulandroid.interview_activities.InterviewActivities;
-import com.lighthouse.awfulandroid.login.LoginActivity;
+import com.lighthouse.awfulandroid.activities.instructions.InstructionsActivity;
+import com.lighthouse.awfulandroid.activities.interview_activities.InterviewActivities;
+import com.lighthouse.awfulandroid.activities.login.LoginActivity;
 
 public class EntryActivity extends AppCompatActivity {
 

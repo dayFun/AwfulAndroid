@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">AwfulAndroid</string>
     <string name="name_prompt">Please enter your name:</string>
-    <string name="validate_button">Validate</string>
+    <string name="validate_button">VALIDATE</string>
     <string name="welcome_message">Welcome! Let\'s get started…</string>
-    <string name="stuck_button">Stuck?</string>
+    <string name="stuck_button">STUCK?</string>
     <string name="stuck_hint_text">Try entering your name in the format first.last</string>
     <string name="stuck_button_got_it">Got it!</string>
     <string name="title_activity_read_text">ReadTextActivity</string>
@@ -14,4 +14,5 @@
     <string name="username_text_view">Username</string>
     <string name="username_email_text_view">username@mymail.com</string>
     <string name="close_instructions_button">Close Tutorial</string>
+    <string name="bug_found_text">You found a bug!</string>
 </resources>

@@ -1,6 +1,6 @@
 <resources>
 
-    <style name="AppTheme" parent="Base.AppTheme"/>
+    <style name="AppTheme" parent="Base.AppTheme" />
 
     <style name="Base.AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
@@ -8,9 +8,21 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-        <!--<item name="colorControlHighlight">@color/accent_translucent</item> -->
-        <!--<item name="selectableItemBackground">@drawable/selectable_item_background</item>-->
-        <!--<item name="android:selectableItemBackground">@drawable/selectable_item_background</item>-->
+    <!--<item name="colorControlHighlight">@color/accent_translucent</item> -->
+    <!--<item name="selectableItemBackground">@drawable/selectable_item_background</item>-->
+    <!--<item name="android:selectableItemBackground">@drawable/selectable_item_background</item>-->
+
+    <style name="Button" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">14sp</item>
+                <!--<item name="colorControlHighlight">@color/indigo</item>-->
+        <!--<item name="android:colorButtonNormal">#2196f3</item>-->
+        <!--<item name="android:enabled">true</item>-->
+    </style>
+
+    <style name="Button.Bug">
+        <item name="android:background">@color/button_normal</item>
+    </style>
 
     <style name="Toolbar" parent="ThemeOverlay.AppCompat.ActionBar">
         <item name="android:textColorPrimary">@android:color/white</item>

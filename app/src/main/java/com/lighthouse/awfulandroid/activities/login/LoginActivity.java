@@ -1,5 +1,6 @@
-package com.lighthouse.awfulandroid.login;
+package com.lighthouse.awfulandroid.activities.login;
 
+import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -11,7 +12,9 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.lighthouse.awfulandroid.R;
-import com.lighthouse.awfulandroid.interview_activities.InterviewActivities;
+import com.lighthouse.awfulandroid.activities.interview_activities.InterviewActivities;
+import com.lighthouse.awfulandroid.bugs.BugButton;
+import com.lighthouse.awfulandroid.bugs.BugButtonClickListener;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -26,7 +29,7 @@ public class LoginActivity extends AppCompatActivity {
     @Bind(R.id.validate_button)
     Button validateButton;
     @Bind(R.id.stuckButton)
-    Button stuckButton;
+    BugButton stuckButton;
     @Bind(R.id.name_edit_text)
     EditText nameEditText;
 
@@ -39,6 +42,33 @@ public class LoginActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         createEditTextObservable();
+
+        BugButtonClickListener bugButtonClickListener = new BugButtonClickListener(this, stuckButton);
+        stuckButton.setOnLongClickListener(bugButtonClickListener);
+    }
+
+    @OnClick(R.id.validate_button)
+    public void validate() {
+        saveUserName();
+        Intent intent = new Intent(this, InterviewActivities.class);
+        intent.putExtra("USER_NAME", nameEditText.getText().toString());
+        startActivity(intent);
+    }
+
+    @OnClick(R.id.stuckButton)
+    public void stuckHint() {
+        if(!stuckButton.isCamouflaged()) {
+            AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
+            dialogBuilder.setTitle("Stuck?")
+                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .setMessage(R.string.stuck_hint_text)
+                    .setCancelable(false)
+                    .setPositiveButton(R.string.stuck_button_got_it, (dialog, button) -> dialog.cancel());
+
+            AlertDialog stuckDialog = dialogBuilder.create();
+            stuckDialog.show();
+            stuckButton.setCamouflage(true);
+        }
     }
 
     private void createEditTextObservable() {
@@ -57,34 +87,11 @@ public class LoginActivity extends AppCompatActivity {
         return NameValidator.checkName(enteredName);
     }
 
-    @OnClick(R.id.validate_button)
-    public void validate() {
-        saveUserName();
-        Intent intent = new Intent(this, InterviewActivities.class);
-        intent.putExtra("USER_NAME", nameEditText.getText().toString());
-        startActivity(intent);
-    }
-
     private void saveUserName() {
         SharedPreferences sharedPreferences = getSharedPreferences("AwfulAndroidData", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("FULL_USER_NAME", nameEditText.getText().toString());
         editor.apply();
-    }
-
-    @OnClick(R.id.stuckButton)
-    public void stuckHint() {
-        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
-        dialogBuilder.setTitle("Stuck?")
-                .setIcon(android.R.drawable.ic_dialog_alert)
-                .setMessage(R.string.stuck_hint_text)
-                .setCancelable(false)
-                .setPositiveButton(R.string.stuck_button_got_it, (dialog, which) -> dialog.cancel());
-
-        AlertDialog stuckDialog = dialogBuilder.create();
-        stuckDialog.show();
-
-        stuckButton.setEnabled(false);
     }
 
 }

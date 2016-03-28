@@ -1,16 +1,12 @@
-package com.lighthouse.awfulandroid.interview_activities;
+package com.lighthouse.awfulandroid.activities.interview_activities;
 
 
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.lighthouse.awfulandroid.R;
-import com.lighthouse.awfulandroid.instructions.InstructionPageFragment;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -35,7 +31,7 @@ public class InterviewActivities extends AppCompatActivity {
     }
 
     private void showInstructions() {
-        InstructionPageFragment instructionsFragment = new InstructionPageFragment();
+//        InstructionPageFragment instructionsFragment = new InstructionPageFragment();
 
     }
 
