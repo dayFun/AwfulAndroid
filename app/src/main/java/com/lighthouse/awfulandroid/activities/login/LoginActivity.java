@@ -78,6 +78,8 @@ public class LoginActivity extends AppCompatActivity {
                             String enteredName = onTextChangeEvent.text().toString();
                             if (checkName(enteredName)) {
                                 validateButton.setEnabled(true);
+                            } else {
+                                validateButton.setEnabled(false);
                             }
                         }
                 );

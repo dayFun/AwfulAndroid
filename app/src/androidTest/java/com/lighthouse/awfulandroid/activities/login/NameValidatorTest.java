@@ -15,4 +15,8 @@ public class NameValidatorTest extends TestCase {
     public void testCheckNameReturnsFalseWhenNameEnteredContainsExtraWhiteSpace() throws Exception {
         assertFalse(NameValidator.checkName("     william.do    "));
     }
+
+    public void testCheckNameReturnsFalseWhenMiddleNameAlsoEntered() throws Exception {
+        assertFalse(NameValidator.checkName("tom.will.go"));
+    }
 }
