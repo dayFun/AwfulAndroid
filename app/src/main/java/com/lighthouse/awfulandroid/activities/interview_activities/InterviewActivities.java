@@ -38,8 +38,6 @@ public class InterviewActivities extends AppCompatActivity {
             Toast.makeText(InterviewActivities.this,
                     "Hello, " + userName + "\nLet the games begin!", Toast.LENGTH_SHORT).show();
         }
-
-
     }
 
     public String getFormattedUserName() {

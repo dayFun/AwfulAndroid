@@ -1,6 +1,10 @@
-package com.lighthouse.awfulandroid.bugs;
+package com.lighthouse.awfulandroid.util;
+
+import android.graphics.drawable.ColorDrawable;
 
 import com.lighthouse.awfulandroid.R;
+import com.lighthouse.awfulandroid.matchers.Matchers;
+import com.lighthouse.awfulandroid.matchers.WithBackgroundColor;
 
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
@@ -20,6 +24,10 @@ public class LoginActivityHelper {
 
     public static void assertButtonDisplayed(int buttonId, boolean isDisplayed) {
         onView(withId(buttonId)).check(matches(isDisplayed ? isDisplayed() : not(isDisplayed())));
+    }
+
+    public static void assertButtonColor(int buttonId, ColorDrawable expectedColor) {
+        onView(withId(buttonId)).check(matches(WithBackgroundColor.withBackgroundColor(expectedColor)));
     }
 
     public static void assertWelcomeMessageDisplayed() {

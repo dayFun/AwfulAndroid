@@ -1,9 +1,13 @@
 package com.lighthouse.awfulandroid.activities.login;
 
 
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
+import android.support.v4.content.ContextCompat;
 import android.test.suitebuilder.annotation.LargeTest;
+import android.util.Log;
 
 import com.lighthouse.awfulandroid.R;
 
@@ -11,13 +15,14 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import static com.lighthouse.awfulandroid.bugs.LoginActivityHelper.assertButtonDisplayed;
-import static com.lighthouse.awfulandroid.bugs.LoginActivityHelper.assertButtonEnabled;
-import static com.lighthouse.awfulandroid.bugs.LoginActivityHelper.assertStuckDialogDisplayed;
-import static com.lighthouse.awfulandroid.bugs.LoginActivityHelper.assertWelcomeMessageDisplayed;
-import static com.lighthouse.awfulandroid.bugs.LoginActivityHelper.clickStuckButton;
-import static com.lighthouse.awfulandroid.bugs.LoginActivityHelper.closeStuckDialog;
-import static com.lighthouse.awfulandroid.bugs.LoginActivityHelper.enterName;
+import static com.lighthouse.awfulandroid.util.LoginActivityHelper.assertButtonColor;
+import static com.lighthouse.awfulandroid.util.LoginActivityHelper.assertButtonDisplayed;
+import static com.lighthouse.awfulandroid.util.LoginActivityHelper.assertButtonEnabled;
+import static com.lighthouse.awfulandroid.util.LoginActivityHelper.assertStuckDialogDisplayed;
+import static com.lighthouse.awfulandroid.util.LoginActivityHelper.assertWelcomeMessageDisplayed;
+import static com.lighthouse.awfulandroid.util.LoginActivityHelper.clickStuckButton;
+import static com.lighthouse.awfulandroid.util.LoginActivityHelper.closeStuckDialog;
+import static com.lighthouse.awfulandroid.util.LoginActivityHelper.enterName;
 
 @RunWith(AndroidJUnit4.class)
 @LargeTest
@@ -55,12 +60,15 @@ public class LoginActivityTest {
     }
 
     @Test
-    public void testStuckButtonDisabledAfterFirstClick() throws Exception {
-        assertButtonEnabled(stuckButton, true);
+    public void testStuckButtonAppearsDisabledAfterFirstClick() throws Exception {
+//        Thread.sleep(3000L);
+        ColorDrawable expectedDrawable = (ColorDrawable) ContextCompat.getDrawable(mActivityRule.getActivity(), R.color.button_default);
+        Log.d("**DEBUG**", "expected Color: " + expectedDrawable);
+        assertButtonColor(stuckButton, expectedDrawable);
         clickStuckButton();
         closeStuckDialog();
 
-        assertButtonEnabled(stuckButton, false);
+        assertButtonColor(stuckButton, expectedDrawable);
     }
 
     @Test

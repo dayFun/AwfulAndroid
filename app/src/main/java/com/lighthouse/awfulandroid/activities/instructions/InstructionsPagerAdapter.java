@@ -15,12 +15,13 @@ public class InstructionsPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         switch (position) {
             case 0: return InstructionPageFragment.create(0, "page 1", Color.RED);
+            case 1: return InstructionPageFragment.create(0, "page 2", Color.GRAY);
             default: return InstructionPageFragment.create(-99, "default", android.R.color.darker_gray);
         }
     }
 
     @Override
     public int getCount() {
-        return 1;
+        return 2;
     }
 }
