@@ -8,7 +8,6 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.lighthouse.awfulandroid.activities.instructions.InstructionsActivity;
 import com.lighthouse.awfulandroid.activities.interview_activities.InterviewActivities;
-import com.lighthouse.awfulandroid.activities.login.LoginActivity;
 
 public class EntryActivity extends AppCompatActivity {
 
@@ -22,7 +21,7 @@ public class EntryActivity extends AppCompatActivity {
         String userNamePref = awfulAndroidData.getString("FULL_USER_NAME", UNKNOWN_USER_NAME);
 
         if (userNamePref.equals(UNKNOWN_USER_NAME)) {
-            Intent nextActivityIntent = new Intent(this, LoginActivity.class);
+            Intent nextActivityIntent = new Intent(this, InstructionsActivity.class);
             startActivity(nextActivityIntent);
         } else {
             Intent nextActivityIntent = new Intent(this, InterviewActivities.class);

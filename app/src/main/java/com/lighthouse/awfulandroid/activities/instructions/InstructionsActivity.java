@@ -11,10 +11,10 @@ public class InstructionsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_instructions_pager);
+        setContentView(R.layout.activity_instructions);
 
         FragmentManager fm = getSupportFragmentManager();
-        DemoInstructionPageDialog overlay = new DemoInstructionPageDialog();
+        InstructionPageDialog overlay = new InstructionPageDialog();
         overlay.show(fm, "InstructionsDialog");
     }
 }
