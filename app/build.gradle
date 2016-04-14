@@ -1,5 +1,6 @@
 apply plugin: 'me.tatarka.retrolambda'
 apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
 
 ext {
     supportLibraryVersion = '23.2.1'
@@ -12,6 +13,7 @@ ext {
     runnerVersion = '0.4.1'
     rulesVersion = '0.4.1'
     espressoVersion = '2.2.1'
+    daggerVersion = '2.2'
 }
 
 android {
@@ -54,6 +56,11 @@ dependencies {
     compile "com.android.support:design:${supportLibraryVersion}"
     //    compile 'com.jakewharton.rxbinding:rxbinding:0.4.0'
     //    compile 'com.jakewharton.rxbinding:rxbinding-appcompat-v7:0.4.0'
+
+    // Dependency Injection
+    compile "com.google.dagger:dagger:${daggerVersion}"
+    apt "com.google.dagger:dagger-compiler:${daggerVersion}"
+    provided 'javax.annotation:jsr250-api:1.0'
 
     // Dependencies for local unit tests
     testCompile "junit:junit:${junitVersion}"

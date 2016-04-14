@@ -12,7 +12,7 @@ import com.lighthouse.awfulandroid.R;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class InterviewActivities extends AppCompatActivity {
+public class InterviewActivity extends AppCompatActivity {
 
     private final String[] activities = {"Lorem Ipsum"};
 
@@ -35,7 +35,7 @@ public class InterviewActivities extends AppCompatActivity {
         if(getIntent().getStringExtra("USER_NAME") != null) {
             String userName = getFormattedUserName();
 
-            Toast.makeText(InterviewActivities.this,
+            Toast.makeText(InterviewActivity.this,
                     "Hello, " + userName + "\nLet the games begin!", Toast.LENGTH_SHORT).show();
         }
 
