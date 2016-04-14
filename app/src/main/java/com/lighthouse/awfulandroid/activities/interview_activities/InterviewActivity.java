@@ -3,6 +3,7 @@ package com.lighthouse.awfulandroid.activities.interview_activities;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -18,6 +19,8 @@ public class InterviewActivity extends AppCompatActivity {
 
     @Bind(R.id.activities_list)
     ListView activitiesList;
+    @Bind(R.id.toolbar)
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +28,7 @@ public class InterviewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_interview_activities);
         ButterKnife.bind(this);
 
+        setSupportActionBar(toolbar);
         greetUser();
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, activities);
