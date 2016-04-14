@@ -9,6 +9,7 @@ import com.lighthouse.awfulandroid.R;
 public class BugButton extends Button {
     private boolean found = false;
     private boolean camouflage = false;
+    private boolean findable = false;
 
     public BugButton(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
@@ -18,13 +19,21 @@ public class BugButton extends Button {
         super(context, attrs);
     }
 
-    public boolean isFound() {
-        return found;
-    }
-
     public void setFound(boolean found) {
         this.found = found;
         this.setEnabled(false);
+    }
+
+    public void setFindable(boolean canFind) {
+        this.findable = canFind;
+    }
+
+    public boolean isFindable() {
+        return findable;
+    }
+
+    public boolean found() {
+        return found;
     }
 
     public boolean isCamouflaged() {
@@ -35,4 +44,5 @@ public class BugButton extends Button {
         this.camouflage = isCamouflage;
         this.setBackground(getResources().getDrawable(R.color.button_camouflage, null));
     }
+
 }

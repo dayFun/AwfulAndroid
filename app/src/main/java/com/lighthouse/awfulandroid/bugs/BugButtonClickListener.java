@@ -17,7 +17,7 @@ public class BugButtonClickListener implements View.OnLongClickListener {
 
     @Override
     public boolean onLongClick(View v) {
-        if(bugButton.isCamouflaged() && !bugButton.isFound()) {
+        if((bugButton.isFindable()) && !bugButton.found()) {
             alertBuilder.showBugFoundAlert();
             bugButton.setFound(true);
             return true;
