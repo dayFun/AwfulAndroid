@@ -1,6 +1,5 @@
 package com.lighthouse.awfulandroid.activities.login;
 
-import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -8,9 +7,12 @@ import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.jakewharton.rxbinding.widget.RxTextView;
+import com.jakewharton.rxbinding.widget.TextViewBeforeTextChangeEvent;
 import com.lighthouse.awfulandroid.R;
 import com.lighthouse.awfulandroid.activities.interview_activities.InterviewActivities;
 import com.lighthouse.awfulandroid.bugs.BugButton;
@@ -19,8 +21,10 @@ import com.lighthouse.awfulandroid.bugs.BugButtonClickListener;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import rx.Observable;
+import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
-import rx.android.widget.WidgetObservable;
+import rx.functions.Action1;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -32,6 +36,13 @@ public class LoginActivity extends AppCompatActivity {
     BugButton stuckButton;
     @Bind(R.id.name_edit_text)
     EditText nameEditText;
+    @Bind(R.id.clock)
+    EditText clockEditText;
+    @Bind(R.id.clear_clock)
+    Button clearClock;
+
+    private Observable<CharSequence> clockTimeObservable;
+    private Subscriber<CharSequence> clockTimeSubscriber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,10 +52,36 @@ public class LoginActivity extends AppCompatActivity {
 
         setSupportActionBar(toolbar);
 
+        bindClock();
+
         createEditTextObservable();
 
         BugButtonClickListener bugButtonClickListener = new BugButtonClickListener(this, stuckButton);
         stuckButton.setOnLongClickListener(bugButtonClickListener);
+    }
+
+
+    private void bindClock() {
+//        RxTextView.(clockEditText).observeOn(AndroidSchedulers.mainThread()).subscribe(new Action1<TextViewBeforeTextChangeEvent>() {
+//            @Override
+//            public void call(TextViewBeforeTextChangeEvent textViewBeforeTextChangeEvent) {
+//                CharSequence text = textViewBeforeTextChangeEvent.text();
+//                Log.d("**DEBUG**", "text: " + text);
+//                textViewBeforeTextChangeEvent.
+//            }
+//        });
+//                .filter(textViewEditorActionEvent -> {
+//                    textViewEditorActionEvent.keyEvent().getDisplayLabel();
+//                })
+
+
+//                .subscribe(event -> Toast.makeText(this, event.keyEvent().getCharacters(), Toast.LENGTH_SHORT).show());
+
+    }
+
+    @OnClick(R.id.clear_clock)
+    public void ClearClock() {
+        clockEditText.setText("");
     }
 
     @OnClick(R.id.validate_button)
@@ -57,7 +94,7 @@ public class LoginActivity extends AppCompatActivity {
 
     @OnClick(R.id.stuckButton)
     public void stuckHint() {
-        if(!stuckButton.isCamouflaged()) {
+        if (!stuckButton.isCamouflaged()) {
             AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
             dialogBuilder.setTitle("Stuck?")
                     .setIcon(android.R.drawable.ic_dialog_alert)
@@ -72,7 +109,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void createEditTextObservable() {
-        WidgetObservable.text(nameEditText)
+        RxTextView.textChangeEvents(nameEditText)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(onTextChangeEvent -> {
                             String enteredName = onTextChangeEvent.text().toString();
