@@ -4,9 +4,12 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.Toast;
 
 import com.lighthouse.awfulandroid.AwfulAndroid;
 import com.lighthouse.awfulandroid.activities.login.LoginActivity;
+import com.lighthouse.awfulandroid.util.DevHelper;
+import com.lighthouse.awfulandroid.util.DevHelperImpl;
 
 import javax.inject.Inject;
 
@@ -23,6 +26,9 @@ public class EntryActivity extends AppCompatActivity {
 
         ((AwfulAndroid) this.getApplicationContext()).getComponent().inject(this);
 
+        DevHelper devHelper = new DevHelperImpl();
+        Toast.makeText(EntryActivity.this, "Is dev? " + Boolean.toString(devHelper.isDev()), Toast.LENGTH_SHORT).show();
+
         String userNamePref = sharedPreferences.getString("FULL_USER_NAME", UNKNOWN_USER_NAME);
 
 //        if (userNamePref.equals(UNKNOWN_USER_NAME)) {
@@ -33,4 +39,5 @@ public class EntryActivity extends AppCompatActivity {
 //            startActivity(nextActivityIntent);
 //        }
     }
+
 }
