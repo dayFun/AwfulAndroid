@@ -1,1 +1,2 @@
-include ':app'
+include ':AwfulAndroid'
+project(':AwfulAndroid').projectDir = new File('app')
