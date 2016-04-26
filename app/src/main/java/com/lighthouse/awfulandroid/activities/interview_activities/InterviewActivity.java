@@ -4,6 +4,7 @@ package com.lighthouse.awfulandroid.activities.interview_activities;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.NavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -28,6 +29,8 @@ public class InterviewActivity extends AppCompatActivity {
     @Inject
     ForecastService forecastService;
 
+    @Bind(R.id.options_drawer)
+    NavigationView navigationDrawer;
     @Bind(R.id.activities_list)
     ListView activitiesList;
 
