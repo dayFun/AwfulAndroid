@@ -5,7 +5,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -29,6 +32,8 @@ public class InterviewActivity extends AppCompatActivity {
     @Inject
     ForecastService forecastService;
 
+    @Bind(R.id.toolbar)
+    Toolbar toolbar;
     @Bind(R.id.options_drawer)
     NavigationView navigationDrawer;
     @Bind(R.id.activities_list)
@@ -61,6 +66,14 @@ public class InterviewActivity extends AppCompatActivity {
                 });
             }
         });
+    }
+
+    // Menu icons are inflated just as they were with actionbar
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+//        getMenuInflater().inflate(R.menu., menu);
+        return true;
     }
 
     private void greetUser() {
