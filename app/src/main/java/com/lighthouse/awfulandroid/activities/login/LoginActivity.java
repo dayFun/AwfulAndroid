@@ -60,7 +60,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
 
-        AwfulAndroidApp.get(this).getApplicationComponent().inject(this);
+        AwfulAndroidApp.get(this).getComponent().inject(this);
 
         setSupportActionBar(toolbar);
         createLoginNameObservable();

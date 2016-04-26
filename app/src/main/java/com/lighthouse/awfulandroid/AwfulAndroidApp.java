@@ -25,32 +25,10 @@ public class AwfulAndroidApp extends Application {
         super.onCreate();
         applicationComponent = prepareApplicationComponent().build();
         applicationComponent.inject(this);
-
-        RxJavaPlugins.getInstance().registerObservableExecutionHook(new DebugHook(new DebugNotificationListener() {
-            public Object onNext(DebugNotification n) {
-                Log.v(TAG, "onNext on " + n);
-                return super.onNext(n);
-            }
-
-
-            public Object start(DebugNotification n) {
-                Log.v(TAG, "start on " + n);
-                return super.start(n);
-            }
-
-
-            public void complete(Object context) {
-                Log.v(TAG, "complete on " + context);
-            }
-
-            public void error(Object context, Throwable e) {
-                Log.e(TAG, "error on " + context);
-            }
-        }));
     }
 
     @NonNull
-    public ApplicationComponent getApplicationComponent() {
+    public ApplicationComponent getComponent() {
         return applicationComponent;
     }
 
@@ -61,7 +39,7 @@ public class AwfulAndroidApp extends Application {
     @NonNull
     protected DaggerApplicationComponent.Builder prepareApplicationComponent() {
         return DaggerApplicationComponent.builder()
-                .applicationModule(new AndroidModule(this));
+                    .androidModule(new AndroidModule(this));
     }
 
 }

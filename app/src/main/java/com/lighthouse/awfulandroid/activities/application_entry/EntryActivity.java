@@ -3,14 +3,11 @@ package com.lighthouse.awfulandroid.activities.application_entry;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.Toast;
 
 import com.f2prateek.rx.preferences.Preference;
 import com.f2prateek.rx.preferences.RxSharedPreferences;
 import com.lighthouse.awfulandroid.AwfulAndroidApp;
-import com.lighthouse.awfulandroid.activities.login.LoginActivity;
-import com.lighthouse.awfulandroid.util.DevHelper;
-import com.lighthouse.awfulandroid.util.DevHelperImpl;
+import com.lighthouse.awfulandroid.activities.interview_activities.InterviewActivity;
 
 import javax.inject.Inject;
 
@@ -25,19 +22,16 @@ public class EntryActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        AwfulAndroidApp.get(this).getApplicationComponent().inject(this);
-
-        DevHelper devHelper = new DevHelperImpl();
-        Toast.makeText(EntryActivity.this, "Is dev? " + Boolean.toString(devHelper.isDev()), Toast.LENGTH_SHORT).show();
+        AwfulAndroidApp.get(this).getComponent().inject(this);
 
         Preference<String> userNamePref = sharedPreferences.getString("FULL_USER_NAME", UNKNOWN_USER_NAME);
 
 //        if (userNamePref.equals(UNKNOWN_USER_NAME)) {
-        Intent nextActivityIntent = new Intent(this, LoginActivity.class);
-        startActivity(nextActivityIntent);
+//        Intent nextActivityIntent = new Intent(this, LoginActivity.class);
+//        startActivity(nextActivityIntent);
 //        } else {
-//            Intent nextActivityIntent = new Intent(this, InterviewActivity.class);
-//            startActivity(nextActivityIntent);
+            Intent nextActivityIntent = new Intent(this, InterviewActivity.class);
+            startActivity(nextActivityIntent);
 //        }
     }
 

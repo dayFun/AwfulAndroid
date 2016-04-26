@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.lighthouse.awfulandroid">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
     <!--<uses-permission android:name="android.permission.SET_TIME_ZONE" />-->
 
     <application
@@ -28,6 +29,8 @@
         <activity android:name=".activities.login.LoginActivity" />
         <activity android:name=".activities.interview_activities.InterviewActivity" />
 
+        <service android:name=".services.CurrentConditionService"
+            android:exported="false"/>
     </application>
 
 </manifest>

@@ -7,11 +7,14 @@ import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 
 import com.f2prateek.rx.preferences.RxSharedPreferences;
+import com.lighthouse.awfulandroid.http.ForecastService;
+import com.lighthouse.awfulandroid.http.ForecastServiceImpl;
 
 import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
+import retrofit.RestAdapter;
 
 @Module
 public class AndroidModule {
@@ -22,13 +25,11 @@ public class AndroidModule {
         this.application = application;
     }
 
-
     @Provides
     @Singleton
     public Context provideContext() {
         return application;
     }
-
 
     @Provides
     @Singleton
@@ -40,5 +41,10 @@ public class AndroidModule {
     @Singleton
     public RxSharedPreferences provideRxSharedPreferences() {
         return RxSharedPreferences.create(PreferenceManager.getDefaultSharedPreferences(application));
+    }
+
+    @Provides
+    public ForecastService provideForecastService(RestAdapter restAdapter) {
+        return new ForecastServiceImpl(restAdapter);
     }
 }

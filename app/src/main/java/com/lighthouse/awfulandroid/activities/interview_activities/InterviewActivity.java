@@ -9,14 +9,24 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.lighthouse.awfulandroid.AwfulAndroidApp;
 import com.lighthouse.awfulandroid.R;
+import com.lighthouse.awfulandroid.http.ForecastListener;
+import com.lighthouse.awfulandroid.http.ForecastService;
+import com.lighthouse.awfulandroid.models.Forecast;
+import com.lighthouse.awfulandroid.services.CurrentConditionService;
+
+import javax.inject.Inject;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class InterviewActivity extends AppCompatActivity {
 
-    private final String[] activities = {"Lorem Ipsum"};
+    private final String[] activities = {"Lorem Ipsum", "Weather"};
+
+    @Inject
+    ForecastService forecastService;
 
     @Bind(R.id.activities_list)
     ListView activitiesList;
@@ -27,10 +37,27 @@ public class InterviewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_interview_activities);
         ButterKnife.bind(this);
 
+        AwfulAndroidApp.get(this).getComponent().inject(this);
+
         greetUser();
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, activities);
         activitiesList.setAdapter(adapter);
+        activitiesList.setOnItemClickListener((parent, view, position, id) -> {
+            if(position == 1) {
+                forecastService.getForecastFor("22.2", "90.0", new ForecastListener() {
+                    @Override
+                    public void onForecastLoaded(Forecast forecast) {
+                        Toast.makeText(InterviewActivity.this, forecast.getCurrently().getIcon() + "\r", Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onForecastFailed(Exception e) {
+
+                    }
+                });
+            }
+        });
     }
 
     private void greetUser() {
@@ -40,8 +67,6 @@ public class InterviewActivity extends AppCompatActivity {
             Toast.makeText(InterviewActivity.this,
                     "Hello, " + userName + "\nLet the games begin!", Toast.LENGTH_SHORT).show();
         }
-
-
     }
 
     public String getFormattedUserName() {
