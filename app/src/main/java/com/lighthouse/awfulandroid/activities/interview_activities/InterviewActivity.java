@@ -1,6 +1,8 @@
 package com.lighthouse.awfulandroid.activities.interview_activities;
 
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ArrayAdapter;
@@ -48,6 +50,10 @@ public class InterviewActivity extends AppCompatActivity {
 
         String formatted = splitName[0].substring(0,1).toUpperCase() + splitName[0].substring(1);
         return formatted;
+    }
 
+    public static void startInterviewActivity(Context context) {
+        Intent loginActivity = new Intent(context, InterviewActivity.class);
+        context.startActivity(loginActivity);
     }
 }

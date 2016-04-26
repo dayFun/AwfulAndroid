@@ -5,9 +5,6 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
-import com.lighthouse.awfulandroid.activities.application_entry.EntryActivity;
-import com.lighthouse.awfulandroid.activities.login.LoginActivity;
-
 import rx.plugins.DebugHook;
 import rx.plugins.DebugNotification;
 import rx.plugins.DebugNotificationListener;
@@ -64,7 +61,7 @@ public class AwfulAndroidApp extends Application {
     @NonNull
     protected DaggerApplicationComponent.Builder prepareApplicationComponent() {
         return DaggerApplicationComponent.builder()
-                .applicationModule(new ApplicationModule(this));
+                .applicationModule(new AndroidModule(this));
     }
 
 }

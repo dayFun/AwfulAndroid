@@ -1,6 +1,8 @@
 package com.lighthouse.awfulandroid.activities.login;
 
 import android.annotation.TargetApi;
+import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
@@ -16,9 +18,9 @@ import com.f2prateek.rx.preferences.RxSharedPreferences;
 import com.jakewharton.rxbinding.widget.RxTextView;
 import com.lighthouse.awfulandroid.AwfulAndroidApp;
 import com.lighthouse.awfulandroid.R;
+import com.lighthouse.awfulandroid.activities.interview_activities.InterviewActivity;
 import com.lighthouse.awfulandroid.bugs.BugButton;
 import com.lighthouse.awfulandroid.bugs.BugButtonClickListener;
-import com.lighthouse.awfulandroid.util.AppNavigation;
 
 import java.util.Random;
 
@@ -30,7 +32,6 @@ import butterknife.OnClick;
 import rx.Observable;
 import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
-import rx.plugins.DebugHook;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -89,7 +90,7 @@ public class LoginActivity extends AppCompatActivity {
     @OnClick(R.id.validate_button)
     public void validate() {
         saveUserName();
-        AppNavigation.goToInterviewActivity(this);
+        InterviewActivity.startInterviewActivity(this);
     }
 
     @TargetApi(Build.VERSION_CODES.M)
@@ -107,6 +108,11 @@ public class LoginActivity extends AppCompatActivity {
 
         AlertDialog stuckDialog = dialogBuilder.create();
         stuckDialog.show();
+    }
+
+    public static void startLoginActivity(Context context) {
+        Intent loginActivity = new Intent(context, LoginActivity.class);
+        context.startActivity(loginActivity);
     }
 
     private void createLoginNameObservable() {

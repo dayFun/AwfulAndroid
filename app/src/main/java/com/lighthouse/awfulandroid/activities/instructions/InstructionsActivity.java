@@ -1,5 +1,7 @@
 package com.lighthouse.awfulandroid.activities.instructions;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
@@ -16,5 +18,10 @@ public class InstructionsActivity extends AppCompatActivity {
         FragmentManager fm = getSupportFragmentManager();
         InstructionPageDialog overlay = new InstructionPageDialog();
         overlay.show(fm, "InstructionsDialog");
+    }
+
+    public static void startInstructionsActivity(Context context) {
+        Intent instructionsActivity = new Intent(context, InstructionsActivity.class);
+        context.startActivity(instructionsActivity);
     }
 }

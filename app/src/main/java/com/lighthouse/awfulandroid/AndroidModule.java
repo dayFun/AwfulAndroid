@@ -14,11 +14,11 @@ import dagger.Module;
 import dagger.Provides;
 
 @Module
-public class ApplicationModule {
+public class AndroidModule {
     @NonNull
     private final Application application;
 
-    public ApplicationModule(@NonNull Application application) {
+    public AndroidModule(@NonNull Application application) {
         this.application = application;
     }
 

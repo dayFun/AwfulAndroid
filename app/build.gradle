@@ -34,15 +34,19 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+
+        debug {
+            applicationIdSuffix = ".debug"
+        }
     }
 
     productFlavors {
         dev {
-            applicationId = "com.lighthouse.awfulandroid.dev"
+            applicationIdSuffix = "com.lighthouse.awfulandroid.dev"
         }
 
         prod {
-            applicationId = "com.lighthouse.awfulandroid.prod"
+            applicationIdSuffix = "com.lighthouse.awfulandroid.prod"
         }
     }
 
