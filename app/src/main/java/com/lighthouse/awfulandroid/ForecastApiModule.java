@@ -17,8 +17,8 @@ public class ForecastApiModule {
 
     @Provides
     @Named(Constants.Injection.Named.FORECAST_API_KEY)
-    public String provideForecastApiKey() {
-        return "c0fa0bdb67350273874f71526c6bbc91";
+    public String provideForecastApiKey(Context context) {
+        return context.getString(R.string.forecastKey);
     }
 
     @Provides
