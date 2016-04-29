@@ -34,9 +34,9 @@ public class AwfulAndroidApp extends Application {
 
         initializeStetho(this);
 
-        new OkHttpClient.Builder()
-                .addNetworkInterceptor(new StethoInterceptor())
-                .build();
+//        new OkHttpClient.Builder()
+//                .addNetworkInterceptor(new StethoInterceptor())
+//                .build();
     }
 
     private void initializeStetho(final Context context) {

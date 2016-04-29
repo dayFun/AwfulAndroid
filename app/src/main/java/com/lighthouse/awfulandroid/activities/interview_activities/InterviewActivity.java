@@ -38,6 +38,7 @@ public class InterviewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_interview_activities);
         ButterKnife.bind(this);
+        AwfulAndroidApp.get(this).getComponent().inject(this);
 
         ActivityListFragment listFragment = new ActivityListFragment();
 
@@ -46,7 +47,6 @@ public class InterviewActivity extends AppCompatActivity {
                 .add(R.id.list_container, listFragment)
                 .commit();
 
-        AwfulAndroidApp.get(this).getComponent().inject(this);
 
         greetUser();
     }
