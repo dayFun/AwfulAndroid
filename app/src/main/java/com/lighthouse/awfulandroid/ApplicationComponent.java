@@ -3,6 +3,7 @@ package com.lighthouse.awfulandroid;
 import android.support.annotation.NonNull;
 
 import com.lighthouse.awfulandroid.activities.application_entry.EntryActivity;
+import com.lighthouse.awfulandroid.activities.interview_activities.ActivityListFragment;
 import com.lighthouse.awfulandroid.activities.interview_activities.InterviewActivity;
 import com.lighthouse.awfulandroid.activities.login.LoginActivity;
 import com.lighthouse.awfulandroid.services.CurrentConditionService;
@@ -24,4 +25,6 @@ public interface ApplicationComponent {
     void inject(@NonNull CurrentConditionService target);
 
     void inject(@NonNull InterviewActivity target);
+
+    void inject(@NonNull ActivityListFragment target);
 }

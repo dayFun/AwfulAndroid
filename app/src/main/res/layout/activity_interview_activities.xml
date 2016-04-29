@@ -5,29 +5,21 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
 
-    <android.support.design.widget.CoordinatorLayout xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".LoginActivity">
+        android:orientation="vertical">
 
-        <android.support.design.widget.AppBarLayout
-            android:id="@+id/appBarLayout"
+        <include layout="@layout/app_toolbar" />
+
+        <FrameLayout
+            android:id="@+id/list_container"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+        </FrameLayout>
 
-            <include layout="@layout/app_toolbar" />
-
-        </android.support.design.widget.AppBarLayout>
-
-    </android.support.design.widget.CoordinatorLayout>
-
-    <!--Margin Hack...gross-->
-    <ListView
-        android:id="@+id/activities_list"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="55dp">
-    </ListView>
+    </LinearLayout>
 
     <!-- The navigation drawer -->
     <android.support.design.widget.NavigationView
@@ -39,7 +31,7 @@
         android:divider="@android:color/transparent"
         android:dividerHeight="0dp"
         app:headerLayout="@layout/drawer_header"
-        app:menu="@menu/drawer" />/
+        app:menu="@menu/drawer" />
 </android.support.v4.widget.DrawerLayout>
 
 
