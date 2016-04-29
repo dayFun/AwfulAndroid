@@ -3,12 +3,17 @@ package com.lighthouse.awfulandroid;
 import android.app.Application;
 import android.content.Context;
 import android.support.annotation.NonNull;
-import android.util.Log;
 
-import rx.plugins.DebugHook;
-import rx.plugins.DebugNotification;
-import rx.plugins.DebugNotificationListener;
-import rx.plugins.RxJavaPlugins;
+import com.facebook.stetho.DumperPluginsProvider;
+import com.facebook.stetho.Stetho;
+import com.facebook.stetho.Stetho.DefaultDumperPluginsBuilder;
+import com.facebook.stetho.dumpapp.DumperPlugin;
+import com.facebook.stetho.dumpapp.plugins.CrashDumperPlugin;
+import com.facebook.stetho.dumpapp.plugins.FilesDumperPlugin;
+import com.facebook.stetho.dumpapp.plugins.SharedPreferencesDumperPlugin;
+import com.facebook.stetho.okhttp3.StethoInterceptor;
+
+import okhttp3.OkHttpClient;
 
 public class AwfulAndroidApp extends Application {
 
@@ -23,8 +28,26 @@ public class AwfulAndroidApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
         applicationComponent = prepareApplicationComponent().build();
         applicationComponent.inject(this);
+
+        initializeStetho(this);
+
+        new OkHttpClient.Builder()
+                .addNetworkInterceptor(new StethoInterceptor())
+                .build();
+    }
+
+    private void initializeStetho(final Context context) {
+        Stetho.initialize(Stetho.newInitializerBuilder(context)
+                .enableWebKitInspector(Stetho.defaultInspectorModulesProvider(context))
+                .enableDumpapp(() -> new DefaultDumperPluginsBuilder(context)
+                        .provide(new SharedPreferencesDumperPlugin(context))
+                        .provide(new CrashDumperPlugin())
+                        .provide(new FilesDumperPlugin(context))
+                        .finish())
+                .build());
     }
 
     @NonNull
@@ -39,7 +62,7 @@ public class AwfulAndroidApp extends Application {
     @NonNull
     protected DaggerApplicationComponent.Builder prepareApplicationComponent() {
         return DaggerApplicationComponent.builder()
-                    .androidModule(new AndroidModule(this));
+                .androidModule(new AndroidModule(this));
     }
 
 }
