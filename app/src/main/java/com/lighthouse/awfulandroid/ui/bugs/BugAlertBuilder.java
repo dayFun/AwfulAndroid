@@ -1,4 +1,4 @@
-package com.lighthouse.awfulandroid.bugs;
+package com.lighthouse.awfulandroid.ui.bugs;
 
 import android.content.Context;
 import android.support.v7.app.AlertDialog;

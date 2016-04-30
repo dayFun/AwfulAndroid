@@ -1,4 +1,4 @@
-package com.lighthouse.awfulandroid.activities.interview_activities;
+package com.lighthouse.awfulandroid.ui.activities;
 
 
 import android.app.FragmentManager;
@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.lighthouse.awfulandroid.AwfulAndroidApp;
 import com.lighthouse.awfulandroid.R;
+import com.lighthouse.awfulandroid.ui.fragments.ActivityListFragment;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;

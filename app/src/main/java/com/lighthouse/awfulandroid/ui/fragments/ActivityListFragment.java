@@ -1,4 +1,4 @@
-package com.lighthouse.awfulandroid.activities.interview_activities;
+package com.lighthouse.awfulandroid.ui.fragments;
 
 
 import android.app.Fragment;

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.login.LoginActivity"
+    tools:context=".ui.activities.LoginActivity"
     tools:showIn="@layout/activity_login">
 
     <LinearLayout
@@ -59,7 +59,7 @@
                 android:enabled="false"
                 android:text="@string/validate_button" />
 
-            <com.lighthouse.awfulandroid.bugs.BugButton
+            <com.lighthouse.awfulandroid.ui.bugs.BugButton
                 android:id="@+id/stuckButton"
                 style="@style/Button.Bug"
                 android:layout_width="wrap_content"

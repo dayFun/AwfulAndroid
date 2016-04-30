@@ -1,4 +1,6 @@
-package com.lighthouse.awfulandroid.activities.login;
+package com.lighthouse.awfulandroid.ui.activities.login;
+
+import com.lighthouse.awfulandroid.util.NameValidator;
 
 import junit.framework.TestCase;
 

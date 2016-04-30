@@ -1,4 +1,4 @@
-package com.lighthouse.awfulandroid.activities.application_entry;
+package com.lighthouse.awfulandroid.ui.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,7 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import com.f2prateek.rx.preferences.Preference;
 import com.f2prateek.rx.preferences.RxSharedPreferences;
 import com.lighthouse.awfulandroid.AwfulAndroidApp;
-import com.lighthouse.awfulandroid.activities.interview_activities.InterviewActivity;
 
 import javax.inject.Inject;
 

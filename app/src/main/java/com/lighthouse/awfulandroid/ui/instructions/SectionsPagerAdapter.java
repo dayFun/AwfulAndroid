@@ -1,4 +1,4 @@
-package com.lighthouse.awfulandroid.activities.instructions;
+package com.lighthouse.awfulandroid.ui.instructions;
 
 import android.graphics.Color;
 import android.support.v4.app.Fragment;

@@ -2,10 +2,10 @@ package com.lighthouse.awfulandroid;
 
 import android.support.annotation.NonNull;
 
-import com.lighthouse.awfulandroid.activities.application_entry.EntryActivity;
-import com.lighthouse.awfulandroid.activities.interview_activities.ActivityListFragment;
-import com.lighthouse.awfulandroid.activities.interview_activities.InterviewActivity;
-import com.lighthouse.awfulandroid.activities.login.LoginActivity;
+import com.lighthouse.awfulandroid.ui.activities.EntryActivity;
+import com.lighthouse.awfulandroid.ui.fragments.ActivityListFragment;
+import com.lighthouse.awfulandroid.ui.activities.InterviewActivity;
+import com.lighthouse.awfulandroid.ui.activities.LoginActivity;
 import com.lighthouse.awfulandroid.services.CurrentConditionService;
 
 import javax.inject.Singleton;

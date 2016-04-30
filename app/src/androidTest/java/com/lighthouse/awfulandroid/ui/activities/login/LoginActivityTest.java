@@ -1,4 +1,4 @@
-package com.lighthouse.awfulandroid.activities.login;
+package com.lighthouse.awfulandroid.ui.activities.login;
 
 
 import android.support.test.rule.ActivityTestRule;
@@ -6,18 +6,19 @@ import android.support.test.runner.AndroidJUnit4;
 import android.test.suitebuilder.annotation.LargeTest;
 
 import com.lighthouse.awfulandroid.R;
+import com.lighthouse.awfulandroid.ui.activities.LoginActivity;
 
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import static com.lighthouse.awfulandroid.bugs.LoginActivityHelper.assertButtonDisplayed;
-import static com.lighthouse.awfulandroid.bugs.LoginActivityHelper.assertButtonEnabled;
-import static com.lighthouse.awfulandroid.bugs.LoginActivityHelper.assertStuckDialogDisplayed;
-import static com.lighthouse.awfulandroid.bugs.LoginActivityHelper.assertWelcomeMessageDisplayed;
-import static com.lighthouse.awfulandroid.bugs.LoginActivityHelper.clickStuckButton;
-import static com.lighthouse.awfulandroid.bugs.LoginActivityHelper.closeStuckDialog;
-import static com.lighthouse.awfulandroid.bugs.LoginActivityHelper.enterName;
+import static com.lighthouse.awfulandroid.ui.bugs.LoginActivityHelper.assertButtonDisplayed;
+import static com.lighthouse.awfulandroid.ui.bugs.LoginActivityHelper.assertButtonEnabled;
+import static com.lighthouse.awfulandroid.ui.bugs.LoginActivityHelper.assertStuckDialogDisplayed;
+import static com.lighthouse.awfulandroid.ui.bugs.LoginActivityHelper.assertWelcomeMessageDisplayed;
+import static com.lighthouse.awfulandroid.ui.bugs.LoginActivityHelper.clickStuckButton;
+import static com.lighthouse.awfulandroid.ui.bugs.LoginActivityHelper.closeStuckDialog;
+import static com.lighthouse.awfulandroid.ui.bugs.LoginActivityHelper.enterName;
 
 @RunWith(AndroidJUnit4.class)
 @LargeTest

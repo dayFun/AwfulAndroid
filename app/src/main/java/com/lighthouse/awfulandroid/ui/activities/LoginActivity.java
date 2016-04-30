@@ -1,4 +1,4 @@
-package com.lighthouse.awfulandroid.activities.login;
+package com.lighthouse.awfulandroid.ui.activities;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -18,9 +18,9 @@ import com.f2prateek.rx.preferences.RxSharedPreferences;
 import com.jakewharton.rxbinding.widget.RxTextView;
 import com.lighthouse.awfulandroid.AwfulAndroidApp;
 import com.lighthouse.awfulandroid.R;
-import com.lighthouse.awfulandroid.activities.interview_activities.InterviewActivity;
-import com.lighthouse.awfulandroid.bugs.BugButton;
-import com.lighthouse.awfulandroid.bugs.BugButtonClickListener;
+import com.lighthouse.awfulandroid.ui.bugs.BugButton;
+import com.lighthouse.awfulandroid.ui.bugs.BugButtonClickListener;
+import com.lighthouse.awfulandroid.util.NameValidator;
 
 import java.util.Random;
 
