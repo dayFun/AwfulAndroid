@@ -4,16 +4,11 @@ import android.app.Application;
 import android.content.Context;
 import android.support.annotation.NonNull;
 
-import com.facebook.stetho.DumperPluginsProvider;
 import com.facebook.stetho.Stetho;
 import com.facebook.stetho.Stetho.DefaultDumperPluginsBuilder;
-import com.facebook.stetho.dumpapp.DumperPlugin;
 import com.facebook.stetho.dumpapp.plugins.CrashDumperPlugin;
 import com.facebook.stetho.dumpapp.plugins.FilesDumperPlugin;
 import com.facebook.stetho.dumpapp.plugins.SharedPreferencesDumperPlugin;
-import com.facebook.stetho.okhttp3.StethoInterceptor;
-
-import okhttp3.OkHttpClient;
 
 public class AwfulAndroidApp extends Application {
 

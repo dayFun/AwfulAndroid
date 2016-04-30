@@ -2,12 +2,10 @@ package com.lighthouse.awfulandroid.activities.interview_activities;
 
 
 import android.app.Fragment;
-import android.app.ListFragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -22,7 +20,6 @@ import javax.inject.Inject;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 import butterknife.OnItemClick;
 
 public class ActivityListFragment extends Fragment {
@@ -41,7 +38,7 @@ public class ActivityListFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_activity_list, container, false);
         ButterKnife.bind(this, view);
-        
+
         ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, activities);
         activitiesList.setAdapter(adapter);
 
