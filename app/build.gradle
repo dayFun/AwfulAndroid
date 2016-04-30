@@ -19,7 +19,7 @@ apply plugin: 'com.neenbedankt.android-apt'
 apply plugin: 'com.fernandocejas.frodo'
 
 ext {
-    supportLibraryVersion = '23.2.1'
+    supportLibraryVersion = '23.3.0'
     guavaVersion = '18.0'
     glideVersion = '3.6.1'
     junitVersion = '4.12'
@@ -34,7 +34,7 @@ ext {
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "23.0.2"
+    buildToolsVersion "23.0.3"
 
     defaultConfig {
         applicationId "com.lighthouse.awfulandroid"
@@ -109,6 +109,7 @@ dependencies {
     testCompile "org.hamcrest:hamcrest-all:${hamcrestVersion}"
     testCompile "org.powermock:powermock-module-junit4:${powerMockito}"
     testCompile "org.powermock:powermock-api-mockito:${powerMockito}"
+    testCompile "org.robolectric:robolectric:3.0"
 
     // Android Testing Support Library's runner and rules
     androidTestCompile "com.android.support.test:runner:${runnerVersion}"
