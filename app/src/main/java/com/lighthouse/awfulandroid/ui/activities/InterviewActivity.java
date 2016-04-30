@@ -14,10 +14,15 @@ import com.lighthouse.awfulandroid.AwfulAndroidApp;
 import com.lighthouse.awfulandroid.R;
 import com.lighthouse.awfulandroid.ui.fragments.ActivityListFragment;
 
+import javax.inject.Inject;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class InterviewActivity extends AppCompatActivity {
+
+    @Inject
+    ActivityListFragment activityListFragment;
 
     @Bind(R.id.toolbar)
     Toolbar toolbar;
@@ -31,11 +36,9 @@ public class InterviewActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         AwfulAndroidApp.get(this).getComponent().inject(this);
 
-        ActivityListFragment listFragment = new ActivityListFragment();
-
         FragmentManager fragmentManager = getFragmentManager();
         fragmentManager.beginTransaction()
-                .add(R.id.list_container, listFragment)
+                .add(R.id.list_container, activityListFragment)
                 .commit();
 
 

@@ -13,7 +13,7 @@ import javax.inject.Singleton;
 import dagger.Component;
 
 @Singleton
-@Component(modules = {AndroidModule.class, ForecastApiModule.class})
+@Component(modules = {AndroidModule.class, AppModule.class, ForecastApiModule.class})
 public interface ApplicationComponent {
 
     void inject(@NonNull AwfulAndroidApp target);
