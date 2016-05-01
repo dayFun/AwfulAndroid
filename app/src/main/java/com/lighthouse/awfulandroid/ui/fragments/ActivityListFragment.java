@@ -11,11 +11,8 @@ import android.widget.ListView;
 
 import com.lighthouse.awfulandroid.AwfulAndroidApp;
 import com.lighthouse.awfulandroid.R;
-import com.lighthouse.awfulandroid.http.ForecastService;
-import com.lighthouse.awfulandroid.ui.activities.ForecastActivity;
+import com.lighthouse.awfulandroid.ui.activities.WeatherActivity;
 import com.lighthouse.awfulandroid.ui.activities.LoremIpsumActivity;
-
-import javax.inject.Inject;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -48,7 +45,7 @@ public class ActivityListFragment extends Fragment {
         }
 
         if (position == 1) {
-            ForecastActivity.startActivity(getActivity());
+            WeatherActivity.startActivity(getActivity());
         }
     }
 }

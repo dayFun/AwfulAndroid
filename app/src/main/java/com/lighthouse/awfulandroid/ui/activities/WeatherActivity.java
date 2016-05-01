@@ -3,7 +3,6 @@ package com.lighthouse.awfulandroid.ui.activities;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -23,7 +22,7 @@ import javax.inject.Inject;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class ForecastActivity extends AppCompatActivity {
+public class WeatherActivity extends AppCompatActivity {
 
     @Inject
     ForecastService forecastService;
@@ -46,7 +45,7 @@ public class ForecastActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_forecast);
+        setContentView(R.layout.activity_weather);
 
         AwfulAndroidApp.get(this).getComponent().inject(this);
         ButterKnife.bind(this);
@@ -84,7 +83,7 @@ public class ForecastActivity extends AppCompatActivity {
     }
 
     public static void startActivity(Context context) {
-        Intent forecastActivity = new Intent(context, ForecastActivity.class);
+        Intent forecastActivity = new Intent(context, WeatherActivity.class);
         context.startActivity(forecastActivity);
     }
 }

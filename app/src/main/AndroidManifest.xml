@@ -29,7 +29,7 @@
         <activity android:name=".ui.activities.LoginActivity" />
         <activity android:name=".ui.activities.InterviewActivity" />
         <activity android:name=".ui.activities.LoremIpsumActivity" />
-        <activity android:name=".ui.activities.ForecastActivity" />
+        <activity android:name=".ui.activities.WeatherActivity" />
 
 
         <service android:name=".services.CurrentConditionService"
