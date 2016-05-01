@@ -18,19 +18,6 @@ repositories {
 apply plugin: 'com.neenbedankt.android-apt'
 apply plugin: 'com.fernandocejas.frodo'
 
-ext {
-    supportLibraryVersion = '23.3.0'
-    guavaVersion = '18.0'
-    glideVersion = '3.6.1'
-    junitVersion = '4.12'
-    mockitoVersion = '1.10.19'
-    powerMockito = '1.6.2'
-    hamcrestVersion = '1.3'
-    runnerVersion = '0.4.1'
-    rulesVersion = '0.4.1'
-    espressoVersion = '2.2.1'
-    daggerVersion = '2.2'
-}
 
 android {
     compileSdkVersion 23
@@ -74,8 +61,22 @@ android {
     }
 
     configurations.all {
-        resolutionStrategy.force "com.android.support:support-annotations:${supportLibraryVersion}"
+        resolutionStrategy.force "com.android.support:support-annotations:23.3.0"
     }
+}
+
+ext {
+    supportLibraryVersion = '23.3.0'
+    guavaVersion = '18.0'
+    glideVersion = '3.6.1'
+    junitVersion = '4.12'
+    mockitoVersion = '1.10.19'
+    powerMockito = '1.6.2'
+    hamcrestVersion = '1.3'
+    runnerVersion = '0.4.1'
+    rulesVersion = '0.4.1'
+    espressoVersion = '2.2.1'
+    daggerVersion = '2.2'
 }
 
 dependencies {
@@ -86,6 +87,7 @@ dependencies {
     compile 'io.reactivex:rxandroid:0.24.0'
     compile 'io.reactivex:rxjava-joins:0.22.0'
     compile "com.android.support:appcompat-v7:${supportLibraryVersion}"
+    compile "com.android.support:support-v13:${supportLibraryVersion}"
     compile "com.android.support:design:${supportLibraryVersion}"
     compile 'com.jakewharton.rxbinding:rxbinding:0.4.0'
     compile 'com.jakewharton.rxbinding:rxbinding-appcompat-v7:0.4.0'
