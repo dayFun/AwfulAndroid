@@ -90,7 +90,7 @@ public class LoginActivity extends AppCompatActivity {
     @OnClick(R.id.validate_button)
     public void validate() {
         saveUserName();
-        InterviewActivity.startInterviewActivity(this);
+        InterviewActivity.startActivity(this);
     }
 
     @TargetApi(Build.VERSION_CODES.M)
@@ -110,7 +110,7 @@ public class LoginActivity extends AppCompatActivity {
         stuckDialog.show();
     }
 
-    public static void startLoginActivity(Context context) {
+    public static void startActivity(Context context) {
         Intent loginActivity = new Intent(context, LoginActivity.class);
         context.startActivity(loginActivity);
     }

@@ -21,7 +21,7 @@ public class InstructionsActivity extends AppCompatActivity {
         overlay.show(fm, "InstructionsDialog");
     }
 
-    public static void startInstructionsActivity(Context context) {
+    public static void startActivity(Context context) {
         Intent instructionsActivity = new Intent(context, InstructionsActivity.class);
         context.startActivity(instructionsActivity);
     }
