@@ -6,8 +6,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.view.menu.MenuBuilder;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.Gravity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.lighthouse.awfulandroid.AwfulAndroidApp;
@@ -26,6 +33,8 @@ public class InterviewActivity extends AppCompatActivity {
 
     @Bind(R.id.toolbar)
     Toolbar toolbar;
+    @Bind(R.id.drawer_layout)
+    DrawerLayout navigationDrawerLayout;
     @Bind(R.id.options_drawer)
     NavigationView navigationDrawer;
 
@@ -36,13 +45,24 @@ public class InterviewActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         AwfulAndroidApp.get(this).getComponent().inject(this);
 
+        initToolbar();
+
         FragmentManager fragmentManager = getFragmentManager();
         fragmentManager.beginTransaction()
                 .add(R.id.list_container, activityListFragment)
                 .commit();
 
+//        greetUser();
+    }
 
-        greetUser();
+    private void initToolbar() {
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_menu_white_24dp);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        toolbar.setNavigationOnClickListener(item -> {
+            navigationDrawerLayout.openDrawer(navigationDrawer);
+        });
     }
 
     private void greetUser() {
