@@ -15,6 +15,7 @@ import com.lighthouse.awfulandroid.R;
 import com.lighthouse.awfulandroid.http.ForecastListener;
 import com.lighthouse.awfulandroid.http.ForecastService;
 import com.lighthouse.awfulandroid.models.Forecast;
+import com.lighthouse.awfulandroid.ui.activities.LoremIpsumActivity;
 
 import javax.inject.Inject;
 
@@ -47,6 +48,10 @@ public class ActivityListFragment extends Fragment {
 
     @OnItemClick(R.id.activities_list)
     public void onItemClick(int position) {
+        if(position == 0) {
+            LoremIpsumActivity.startActivity(getActivity());
+        }
+
         if (position == 1) {
             forecastService.getForecastFor("22.2", "90.0", new ForecastListener() {
                 @Override

@@ -28,6 +28,8 @@
         <activity android:name=".ui.activities.InstructionsActivity" />
         <activity android:name=".ui.activities.LoginActivity" />
         <activity android:name=".ui.activities.InterviewActivity" />
+        <activity android:name=".ui.activities.LoremIpsumActivity" />
+
 
         <service android:name=".services.CurrentConditionService"
             android:exported="false"/>
