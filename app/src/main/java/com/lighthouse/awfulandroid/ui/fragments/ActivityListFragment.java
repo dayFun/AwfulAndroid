@@ -25,9 +25,6 @@ public class ActivityListFragment extends Fragment {
 
     private final String[] ACTIVITIES_LIST = {"Lorem Ipsum", "Weather"};
 
-    @Inject
-    ForecastService forecastService;
-
     @Bind(R.id.activities_list)
     ListView activitiesList;
 

@@ -55,6 +55,7 @@
             android:orientation="horizontal">
 
             <EditText
+                android:id="@+id/latitude_value"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="20dp"
@@ -62,6 +63,7 @@
                 tools:text="25.501" />
 
             <EditText
+                android:id="@+id/longitude_value"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="20dp"
