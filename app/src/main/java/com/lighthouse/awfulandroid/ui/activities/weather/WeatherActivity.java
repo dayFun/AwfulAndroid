@@ -47,7 +47,7 @@ public class WeatherActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather);
 
-        AwfulAndroidApp.get(this).getComponent().inject(this);
+        AwfulAndroidApp.get(this).createWeatherComponent().inject(this);
         ButterKnife.bind(this);
 
         setSupportActionBar(toolbar);

@@ -6,21 +6,24 @@ import com.lighthouse.awfulandroid.AwfulAndroidApp;
 import com.lighthouse.awfulandroid.di.modules.AndroidModule;
 import com.lighthouse.awfulandroid.di.modules.AppModule;
 import com.lighthouse.awfulandroid.di.modules.ForecastApiModule;
-import com.lighthouse.awfulandroid.services.CurrentConditionService;
+import com.lighthouse.awfulandroid.di.scopes.WeatherScope;
 import com.lighthouse.awfulandroid.ui.activities.EntryActivity;
 import com.lighthouse.awfulandroid.ui.activities.LoginActivity;
 import com.lighthouse.awfulandroid.ui.activities.interview.ActivityListFragment;
 import com.lighthouse.awfulandroid.ui.activities.interview.InterviewActivity;
 import com.lighthouse.awfulandroid.ui.activities.lorem_ipsum.LoremIpsumActivity;
-import com.lighthouse.awfulandroid.ui.activities.weather.WeatherActivity;
 
 import javax.inject.Singleton;
 
 import dagger.Component;
 
 @Singleton
-@Component(modules = {AndroidModule.class, AppModule.class, ForecastApiModule.class})
+@Component(modules = {AndroidModule.class, AppModule.class})
 public interface ApplicationComponent {
+
+    /* Subcomponents */
+
+    WeatherComponent plus(ForecastApiModule forecastApiModule);
 
     /* App */
 
@@ -34,7 +37,8 @@ public interface ApplicationComponent {
 
     void inject(@NonNull InterviewActivity target);
 
-    void inject(@NonNull WeatherActivity target);
+    // Moved to Subcomponent WeatherComponent
+    // void inject(@NonNull WeatherActivity target);
 
     void inject(@NonNull LoremIpsumActivity target);
 
