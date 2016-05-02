@@ -4,13 +4,11 @@ import android.content.Context;
 
 import com.lighthouse.awfulandroid.Constants;
 import com.lighthouse.awfulandroid.R;
-import com.lighthouse.awfulandroid.di.scopes.WeatherScope;
 import com.lighthouse.awfulandroid.http.ForecastApiEndpoint;
 import com.lighthouse.awfulandroid.http.ForecastService;
 import com.lighthouse.awfulandroid.http.ForecastServiceImpl;
 
 import javax.inject.Named;
-import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;

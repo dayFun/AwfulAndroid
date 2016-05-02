@@ -6,7 +6,6 @@ import com.lighthouse.awfulandroid.AwfulAndroidApp;
 import com.lighthouse.awfulandroid.di.modules.AndroidModule;
 import com.lighthouse.awfulandroid.di.modules.AppModule;
 import com.lighthouse.awfulandroid.di.modules.ForecastApiModule;
-import com.lighthouse.awfulandroid.di.scopes.WeatherScope;
 import com.lighthouse.awfulandroid.ui.activities.EntryActivity;
 import com.lighthouse.awfulandroid.ui.activities.LoginActivity;
 import com.lighthouse.awfulandroid.ui.activities.interview.ActivityListFragment;

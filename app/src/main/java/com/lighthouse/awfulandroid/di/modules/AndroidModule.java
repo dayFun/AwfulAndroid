@@ -7,14 +7,11 @@ import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 
 import com.f2prateek.rx.preferences.RxSharedPreferences;
-import com.lighthouse.awfulandroid.http.ForecastService;
-import com.lighthouse.awfulandroid.http.ForecastServiceImpl;
 
 import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
-import retrofit.RestAdapter;
 
 @Module
 public class AndroidModule {
