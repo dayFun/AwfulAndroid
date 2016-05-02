@@ -40,7 +40,5 @@ public interface ApplicationComponent {
 
     /* Other stuff */
 
-    void inject(@NonNull CurrentConditionService target);
-
     void inject(@NonNull ActivityListFragment target);
 }

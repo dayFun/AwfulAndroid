@@ -42,9 +42,4 @@ public class AndroidModule {
     public RxSharedPreferences provideRxSharedPreferences() {
         return RxSharedPreferences.create(PreferenceManager.getDefaultSharedPreferences(application));
     }
-
-    @Provides
-    public ForecastService provideForecastService(RestAdapter restAdapter) {
-        return new ForecastServiceImpl(restAdapter);
-    }
 }

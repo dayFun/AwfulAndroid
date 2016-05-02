@@ -4,11 +4,14 @@ import android.os.AsyncTask;
 
 import com.lighthouse.awfulandroid.models.Forecast;
 
+import javax.inject.Inject;
+
+import dagger.Provides;
 import retrofit.RestAdapter;
 
 public class ForecastServiceImpl implements ForecastService {
-
-    private RestAdapter restAdapter;
+    
+    RestAdapter restAdapter;
 
     public ForecastServiceImpl(RestAdapter restAdapter) {
         this.restAdapter = restAdapter;
