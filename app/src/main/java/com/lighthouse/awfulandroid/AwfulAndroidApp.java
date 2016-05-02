@@ -9,6 +9,8 @@ import com.facebook.stetho.Stetho.DefaultDumperPluginsBuilder;
 import com.facebook.stetho.dumpapp.plugins.CrashDumperPlugin;
 import com.facebook.stetho.dumpapp.plugins.FilesDumperPlugin;
 import com.facebook.stetho.dumpapp.plugins.SharedPreferencesDumperPlugin;
+import com.lighthouse.awfulandroid.di.AndroidModule;
+import com.lighthouse.awfulandroid.di.ApplicationComponent;
 
 public class AwfulAndroidApp extends Application {
 

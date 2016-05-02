@@ -1,7 +1,8 @@
-package com.lighthouse.awfulandroid;
+package com.lighthouse.awfulandroid.di;
 
 import android.support.annotation.NonNull;
 
+import com.lighthouse.awfulandroid.AwfulAndroidApp;
 import com.lighthouse.awfulandroid.services.CurrentConditionService;
 import com.lighthouse.awfulandroid.ui.activities.EntryActivity;
 import com.lighthouse.awfulandroid.ui.activities.LoginActivity;

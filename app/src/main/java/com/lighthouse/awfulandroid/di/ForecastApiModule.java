@@ -1,7 +1,9 @@
-package com.lighthouse.awfulandroid;
+package com.lighthouse.awfulandroid.di;
 
 import android.content.Context;
 
+import com.lighthouse.awfulandroid.Constants;
+import com.lighthouse.awfulandroid.R;
 import com.lighthouse.awfulandroid.http.ForecastApiEndpoint;
 
 import javax.inject.Named;

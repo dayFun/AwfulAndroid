@@ -1,4 +1,4 @@
-package com.lighthouse.awfulandroid;
+package com.lighthouse.awfulandroid.di;
 
 import android.app.Application;
 import android.content.Context;
