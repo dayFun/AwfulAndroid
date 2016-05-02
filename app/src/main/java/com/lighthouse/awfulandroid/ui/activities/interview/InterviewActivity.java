@@ -4,14 +4,14 @@ package com.lighthouse.awfulandroid.ui.activities.interview;
 import android.app.FragmentManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.widget.Toast;
 
-import com.lighthouse.awfulandroid.AwfulAndroidApp;
 import com.lighthouse.awfulandroid.R;
 import com.lighthouse.awfulandroid.ui.activities.BaseActivity;
 
@@ -24,6 +24,8 @@ public class InterviewActivity extends BaseActivity {
 
     @Inject
     ActivityListFragment activityListFragment;
+    @Inject
+    SharedPreferences sharedPreferences;
 
     @Bind(R.id.toolbar)
     Toolbar toolbar;
@@ -38,7 +40,8 @@ public class InterviewActivity extends BaseActivity {
         setContentView(R.layout.activity_interview);
         ButterKnife.bind(this);
 
-        activityComponent().inject(this);
+        applicationComponent().inject(this);
+        activityComponent(this).inject(this);
 
         initToolbar();
 
@@ -47,7 +50,8 @@ public class InterviewActivity extends BaseActivity {
                 .add(R.id.list_container, activityListFragment)
                 .commit();
 
-//        greetUser();
+        greetUser();
+
     }
 
     @SuppressWarnings("ConstantConditions")
@@ -62,17 +66,17 @@ public class InterviewActivity extends BaseActivity {
     }
 
     private void greetUser() {
-        if (getIntent().getStringExtra("USER_NAME") != null) {
-            String userName = getFormattedUserName();
+        String userName = sharedPreferences.getString("FULL_USER_NAME", "Uninitialized");
+        if (!userName.equals("Uninitialized")) {
+            userName = formatUserName(userName);
 
             Toast.makeText(InterviewActivity.this,
-                    "Hello, " + userName + "\nLet the games begin!", Toast.LENGTH_SHORT).show();
+                    "Hello, " + userName + "! Let the games begin!", Toast.LENGTH_SHORT).show();
         }
     }
 
-    public String getFormattedUserName() {
-        String userName = getIntent().getCharSequenceExtra("USER_NAME").toString();
-        String[] splitName = userName.split("\\.");
+    public String formatUserName(String name) {
+        String[] splitName = name.split("\\.");
 
         String formatted = splitName[0].substring(0, 1).toUpperCase() + splitName[0].substring(1);
         return formatted;

@@ -10,6 +10,7 @@ import com.lighthouse.awfulandroid.di.modules.ForecastApiModule;
 import com.lighthouse.awfulandroid.ui.activities.EntryActivity;
 import com.lighthouse.awfulandroid.ui.activities.LoginActivity;
 import com.lighthouse.awfulandroid.ui.activities.interview.ActivityListFragment;
+import com.lighthouse.awfulandroid.ui.activities.interview.InterviewActivity;
 
 import javax.inject.Singleton;
 
@@ -23,6 +24,8 @@ public interface ApplicationComponent {
 
     WeatherComponent plus(ForecastApiModule forecastApiModule);
 
+    ActivityComponent.Builder activityComponentBuilder();
+
     /* App */
 
     void inject(@NonNull AwfulAndroidApp target);
@@ -32,4 +35,6 @@ public interface ApplicationComponent {
     void inject(@NonNull LoginActivity target);
 
     void inject(@NonNull EntryActivity target);
+
+    void inject(@NonNull InterviewActivity target);
 }

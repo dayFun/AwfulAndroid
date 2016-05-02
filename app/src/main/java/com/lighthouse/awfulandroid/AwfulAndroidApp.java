@@ -18,6 +18,7 @@ import com.lighthouse.awfulandroid.di.modules.ForecastApiModule;
 public class AwfulAndroidApp extends Application {
 
     private ApplicationComponent applicationComponent;
+//    private ActivityComponent activityComponent;
     private WeatherComponent weatherComponent;
 
     // Prevent need in a singleton (global) reference to the application object.

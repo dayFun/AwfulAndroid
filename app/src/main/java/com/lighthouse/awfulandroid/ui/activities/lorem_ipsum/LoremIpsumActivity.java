@@ -30,7 +30,7 @@ public class LoremIpsumActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lorem_ipsum);
 
-        activityComponent().inject(this);
+        activityComponent(this).inject(this);
         ButterKnife.bind(this);
 
         viewPager.setAdapter(pagerAdapter);

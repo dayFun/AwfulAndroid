@@ -10,12 +10,17 @@ import com.lighthouse.awfulandroid.ui.activities.interview.ActivityListFragment;
 import com.lighthouse.awfulandroid.ui.activities.interview.InterviewActivity;
 import com.lighthouse.awfulandroid.ui.activities.lorem_ipsum.LoremIpsumActivity;
 
-import dagger.Component;
+import dagger.Subcomponent;
 
 @PerActivity
-@Component(dependencies = {ApplicationComponent.class}, modules = {ActivityModule.class})
+@Subcomponent(modules = {ActivityModule.class})
 public interface ActivityComponent {
 
+    @Subcomponent.Builder
+    interface Builder {
+        Builder activityModule(ActivityModule activityModule);
+        ActivityComponent build();
+    }
     /* Activities */
 
     void inject(@NonNull LoginActivity target);

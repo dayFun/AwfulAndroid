@@ -47,10 +47,10 @@ public class LoginActivity extends BaseActivity {
     @Bind(R.id.name_edit_text)
     EditText nameEditText;
 
-//    @Inject
-//    RxSharedPreferences rxPreferences;
-//    @Inject
-//    SharedPreferences preferences;
+    @Inject
+    RxSharedPreferences rxPreferences;
+    @Inject
+    SharedPreferences preferences;
 
     private AlertDialog.Builder dialogBuilder;
     private Subscription subscription;
@@ -61,8 +61,8 @@ public class LoginActivity extends BaseActivity {
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
 
-        AwfulAndroidApp.get(this).getComponent().inject(this);
-        activityComponent().inject(this);
+        applicationComponent().inject(this);
+        activityComponent(this).inject(this);
 
         setSupportActionBar(toolbar);
         createLoginNameObservable();
@@ -91,7 +91,7 @@ public class LoginActivity extends BaseActivity {
 
     @OnClick(R.id.validate_button)
     public void validate() {
-//        saveUserName();
+        saveUserName();
         InterviewActivity.startActivity(this);
     }
 
@@ -131,10 +131,10 @@ public class LoginActivity extends BaseActivity {
                 );
     }
 
-//    private void saveUserName() {
-//        SharedPreferences.Editor editor = preferences.edit();
-//        editor.putString("FULL_USER_NAME", nameEditText.getText().toString());
-//        editor.apply();
-//    }
+    private void saveUserName() {
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("FULL_USER_NAME", nameEditText.getText().toString());
+        editor.apply();
+    }
 
 }
