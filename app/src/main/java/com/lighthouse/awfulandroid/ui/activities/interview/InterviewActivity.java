@@ -13,13 +13,14 @@ import android.widget.Toast;
 
 import com.lighthouse.awfulandroid.AwfulAndroidApp;
 import com.lighthouse.awfulandroid.R;
+import com.lighthouse.awfulandroid.ui.activities.BaseActivity;
 
 import javax.inject.Inject;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class InterviewActivity extends AppCompatActivity {
+public class InterviewActivity extends BaseActivity {
 
     @Inject
     ActivityListFragment activityListFragment;
@@ -36,7 +37,8 @@ public class InterviewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_interview);
         ButterKnife.bind(this);
-        AwfulAndroidApp.get(this).getComponent().inject(this);
+
+        activityComponent().inject(this);
 
         initToolbar();
 

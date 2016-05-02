@@ -8,8 +8,8 @@ import com.lighthouse.awfulandroid.ui.activities.weather.WeatherActivity;
 
 import dagger.Subcomponent;
 
-@Subcomponent(modules = {ForecastApiModule.class})
 @WeatherScope
+@Subcomponent(modules = {ForecastApiModule.class})
 public interface WeatherComponent {
 
     void inject(@NonNull WeatherActivity target);

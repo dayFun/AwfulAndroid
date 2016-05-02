@@ -14,6 +14,8 @@ import com.lighthouse.awfulandroid.R;
 import com.lighthouse.awfulandroid.ui.activities.lorem_ipsum.LoremIpsumActivity;
 import com.lighthouse.awfulandroid.ui.activities.weather.WeatherActivity;
 
+import javax.inject.Inject;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnItemClick;
@@ -25,10 +27,12 @@ public class ActivityListFragment extends Fragment {
     @Bind(R.id.activities_list)
     ListView activitiesList;
 
+    @Inject
+    public ActivityListFragment() {
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        AwfulAndroidApp.get(getActivity()).getComponent().inject(this);
-
         View view = inflater.inflate(R.layout.fragment_activity_list, container, false);
         ButterKnife.bind(this, view);
 

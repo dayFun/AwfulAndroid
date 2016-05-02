@@ -15,16 +15,4 @@ public class AppModule {
     public ActivityListFragment provideActivityListFragment() {
         return new ActivityListFragment();
     }
-
-//    @Provides
-//    @Singleton
-//    public WeatherActivity provideWeatherActivity() {
-//        return new WeatherActivity();
-//    }
-//
-//    @Provides
-//    @Singleton
-//    public ScreenSlidePagerAdapter provideScreenSlidePagerAdapter(WeatherActivity weatherActivity) {
-//        return new ScreenSlidePagerAdapter(weatherActivity.getFragmentManager());
-//    }
 }

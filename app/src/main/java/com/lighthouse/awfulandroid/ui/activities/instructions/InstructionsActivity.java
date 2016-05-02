@@ -7,8 +7,9 @@ import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 
 import com.lighthouse.awfulandroid.R;
+import com.lighthouse.awfulandroid.ui.activities.BaseActivity;
 
-public class InstructionsActivity extends AppCompatActivity {
+public class InstructionsActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

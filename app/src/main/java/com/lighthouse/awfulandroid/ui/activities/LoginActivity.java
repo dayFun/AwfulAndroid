@@ -34,7 +34,7 @@ import rx.Observable;
 import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends BaseActivity {
 
     @Bind(R.id.login_activity_container)
     FrameLayout layout;
@@ -47,10 +47,10 @@ public class LoginActivity extends AppCompatActivity {
     @Bind(R.id.name_edit_text)
     EditText nameEditText;
 
-    @Inject
-    RxSharedPreferences rxPreferences;
-    @Inject
-    SharedPreferences preferences;
+//    @Inject
+//    RxSharedPreferences rxPreferences;
+//    @Inject
+//    SharedPreferences preferences;
 
     private AlertDialog.Builder dialogBuilder;
     private Subscription subscription;
@@ -62,6 +62,7 @@ public class LoginActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         AwfulAndroidApp.get(this).getComponent().inject(this);
+        activityComponent().inject(this);
 
         setSupportActionBar(toolbar);
         createLoginNameObservable();
@@ -90,7 +91,7 @@ public class LoginActivity extends AppCompatActivity {
 
     @OnClick(R.id.validate_button)
     public void validate() {
-        saveUserName();
+//        saveUserName();
         InterviewActivity.startActivity(this);
     }
 
@@ -130,10 +131,10 @@ public class LoginActivity extends AppCompatActivity {
                 );
     }
 
-    private void saveUserName() {
-        SharedPreferences.Editor editor = preferences.edit();
-        editor.putString("FULL_USER_NAME", nameEditText.getText().toString());
-        editor.apply();
-    }
+//    private void saveUserName() {
+//        SharedPreferences.Editor editor = preferences.edit();
+//        editor.putString("FULL_USER_NAME", nameEditText.getText().toString());
+//        editor.apply();
+//    }
 
 }

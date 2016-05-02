@@ -16,13 +16,14 @@ import com.lighthouse.awfulandroid.R;
 import com.lighthouse.awfulandroid.http.ForecastListener;
 import com.lighthouse.awfulandroid.http.ForecastService;
 import com.lighthouse.awfulandroid.models.Forecast;
+import com.lighthouse.awfulandroid.ui.activities.BaseActivity;
 
 import javax.inject.Inject;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class WeatherActivity extends AppCompatActivity {
+public class WeatherActivity extends BaseActivity {
 
     @Inject
     ForecastService forecastService;
@@ -48,6 +49,7 @@ public class WeatherActivity extends AppCompatActivity {
         setContentView(R.layout.activity_weather);
 
         AwfulAndroidApp.get(this).createWeatherComponent().inject(this);
+
         ButterKnife.bind(this);
 
         setSupportActionBar(toolbar);
