@@ -1,8 +1,11 @@
-package com.lighthouse.awfulandroid.di;
+package com.lighthouse.awfulandroid.di.components;
 
 import android.support.annotation.NonNull;
 
 import com.lighthouse.awfulandroid.AwfulAndroidApp;
+import com.lighthouse.awfulandroid.di.modules.AndroidModule;
+import com.lighthouse.awfulandroid.di.modules.AppModule;
+import com.lighthouse.awfulandroid.di.modules.ForecastApiModule;
 import com.lighthouse.awfulandroid.services.CurrentConditionService;
 import com.lighthouse.awfulandroid.ui.activities.EntryActivity;
 import com.lighthouse.awfulandroid.ui.activities.LoginActivity;

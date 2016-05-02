@@ -1,4 +1,4 @@
-package com.lighthouse.awfulandroid.di;
+package com.lighthouse.awfulandroid.di.modules;
 
 import com.lighthouse.awfulandroid.ui.activities.interview.ActivityListFragment;
 
