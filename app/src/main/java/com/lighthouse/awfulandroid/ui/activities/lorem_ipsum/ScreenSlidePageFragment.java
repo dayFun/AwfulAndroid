@@ -1,4 +1,4 @@
-package com.lighthouse.awfulandroid.ui.fragments;
+package com.lighthouse.awfulandroid.ui.activities.lorem_ipsum;
 
 import android.app.Fragment;
 import android.os.Bundle;

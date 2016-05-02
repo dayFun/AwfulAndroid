@@ -1,4 +1,4 @@
-package com.lighthouse.awfulandroid.ui.activities;
+package com.lighthouse.awfulandroid.ui.activities.instructions;
 
 import android.content.Context;
 import android.content.Intent;
@@ -7,7 +7,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 
 import com.lighthouse.awfulandroid.R;
-import com.lighthouse.awfulandroid.ui.instructions.InstructionPageDialog;
 
 public class InstructionsActivity extends AppCompatActivity {
 

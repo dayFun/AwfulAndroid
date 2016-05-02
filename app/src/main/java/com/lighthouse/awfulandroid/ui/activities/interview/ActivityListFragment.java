@@ -1,4 +1,4 @@
-package com.lighthouse.awfulandroid.ui.fragments;
+package com.lighthouse.awfulandroid.ui.activities.interview;
 
 
 import android.app.Fragment;
@@ -11,8 +11,8 @@ import android.widget.ListView;
 
 import com.lighthouse.awfulandroid.AwfulAndroidApp;
 import com.lighthouse.awfulandroid.R;
-import com.lighthouse.awfulandroid.ui.activities.WeatherActivity;
-import com.lighthouse.awfulandroid.ui.activities.LoremIpsumActivity;
+import com.lighthouse.awfulandroid.ui.activities.lorem_ipsum.LoremIpsumActivity;
+import com.lighthouse.awfulandroid.ui.activities.weather.WeatherActivity;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -40,12 +40,13 @@ public class ActivityListFragment extends Fragment {
 
     @OnItemClick(R.id.activities_list)
     public void onItemClick(int position) {
-        if(position == 0) {
-            LoremIpsumActivity.startActivity(getActivity());
-        }
-
-        if (position == 1) {
-            WeatherActivity.startActivity(getActivity());
+        switch(position) {
+            case 0:
+                LoremIpsumActivity.startActivity(getActivity());
+                return;
+            case 1:
+                WeatherActivity.startActivity(getActivity());
+                return;
         }
     }
 }

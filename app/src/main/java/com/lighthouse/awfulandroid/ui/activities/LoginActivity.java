@@ -18,6 +18,7 @@ import com.f2prateek.rx.preferences.RxSharedPreferences;
 import com.jakewharton.rxbinding.widget.RxTextView;
 import com.lighthouse.awfulandroid.AwfulAndroidApp;
 import com.lighthouse.awfulandroid.R;
+import com.lighthouse.awfulandroid.ui.activities.interview.InterviewActivity;
 import com.lighthouse.awfulandroid.ui.bugs.BugButton;
 import com.lighthouse.awfulandroid.ui.bugs.BugButtonClickListener;
 import com.lighthouse.awfulandroid.util.NameValidator;

@@ -25,11 +25,11 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ui.activities.InstructionsActivity" />
+        <activity android:name=".ui.activities.instructions.InstructionsActivity" />
         <activity android:name=".ui.activities.LoginActivity" />
-        <activity android:name=".ui.activities.InterviewActivity" />
-        <activity android:name=".ui.activities.LoremIpsumActivity" />
-        <activity android:name=".ui.activities.WeatherActivity" />
+        <activity android:name=".ui.activities.interview.InterviewActivity" />
+        <activity android:name=".ui.activities.lorem_ipsum.LoremIpsumActivity" />
+        <activity android:name=".ui.activities.weather.WeatherActivity" />
 
 
         <service android:name=".services.CurrentConditionService"

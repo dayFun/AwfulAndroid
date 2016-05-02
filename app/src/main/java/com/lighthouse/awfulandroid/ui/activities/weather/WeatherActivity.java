@@ -1,4 +1,4 @@
-package com.lighthouse.awfulandroid.ui.activities;
+package com.lighthouse.awfulandroid.ui.activities.weather;
 
 import android.content.Context;
 import android.content.Intent;

@@ -1,4 +1,4 @@
-package com.lighthouse.awfulandroid.ui.activities;
+package com.lighthouse.awfulandroid.ui.activities.interview;
 
 
 import android.app.FragmentManager;
@@ -13,7 +13,6 @@ import android.widget.Toast;
 
 import com.lighthouse.awfulandroid.AwfulAndroidApp;
 import com.lighthouse.awfulandroid.R;
-import com.lighthouse.awfulandroid.ui.fragments.ActivityListFragment;
 
 import javax.inject.Inject;
 
@@ -58,7 +57,6 @@ public class InterviewActivity extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(item -> {
             navigationDrawerLayout.openDrawer(navigationDrawer);
         });
-
     }
 
     private void greetUser() {

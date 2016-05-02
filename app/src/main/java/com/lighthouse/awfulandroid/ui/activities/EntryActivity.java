@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import com.f2prateek.rx.preferences.Preference;
 import com.f2prateek.rx.preferences.RxSharedPreferences;
 import com.lighthouse.awfulandroid.AwfulAndroidApp;
+import com.lighthouse.awfulandroid.ui.activities.interview.InterviewActivity;
 
 import javax.inject.Inject;
 

@@ -1,4 +1,4 @@
-package com.lighthouse.awfulandroid.ui.instructions;
+package com.lighthouse.awfulandroid.ui.activities.instructions;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

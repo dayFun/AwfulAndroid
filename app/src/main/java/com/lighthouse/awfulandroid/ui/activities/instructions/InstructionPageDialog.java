@@ -1,4 +1,4 @@
-package com.lighthouse.awfulandroid.ui.instructions;
+package com.lighthouse.awfulandroid.ui.activities.instructions;
 
 import android.app.Dialog;
 import android.os.Bundle;
