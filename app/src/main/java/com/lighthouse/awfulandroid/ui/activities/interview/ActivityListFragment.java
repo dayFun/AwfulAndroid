@@ -1,6 +1,5 @@
 package com.lighthouse.awfulandroid.ui.activities.interview;
 
-
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;

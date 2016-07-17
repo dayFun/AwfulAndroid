@@ -51,7 +51,6 @@ public class InstructionPageFragment extends Fragment {
         this.backgroundColor = getArguments().getInt(ARG_PAGE_BACKGROUND_COLOR);
     }
 
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

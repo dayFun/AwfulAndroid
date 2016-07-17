@@ -19,6 +19,7 @@ public interface ActivityComponent {
     @Subcomponent.Builder
     interface Builder {
         Builder activityModule(ActivityModule activityModule);
+
         ActivityComponent build();
     }
     /* Activities */

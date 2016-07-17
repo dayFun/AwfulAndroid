@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.support.annotation.NonNull;
 
+import com.crashlytics.android.Crashlytics;
 import com.facebook.stetho.Stetho;
 import com.facebook.stetho.Stetho.DefaultDumperPluginsBuilder;
 import com.facebook.stetho.dumpapp.plugins.CrashDumperPlugin;
@@ -15,10 +16,11 @@ import com.lighthouse.awfulandroid.di.components.WeatherComponent;
 import com.lighthouse.awfulandroid.di.modules.AndroidModule;
 import com.lighthouse.awfulandroid.di.modules.ForecastApiModule;
 
+import io.fabric.sdk.android.Fabric;
+
 public class AwfulAndroidApp extends Application {
 
     private ApplicationComponent applicationComponent;
-//    private ActivityComponent activityComponent;
     private WeatherComponent weatherComponent;
 
     // Prevent need in a singleton (global) reference to the application object.
@@ -30,6 +32,7 @@ public class AwfulAndroidApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        Fabric.with(this, new Crashlytics());
 
         applicationComponent = prepareApplicationComponent().build();
         applicationComponent.inject(this);
@@ -47,7 +50,6 @@ public class AwfulAndroidApp extends Application {
     public ApplicationComponent getComponent() {
         return applicationComponent;
     }
-
 
     private void initializeStetho(final Context context) {
         Stetho.initialize(Stetho.newInitializerBuilder(context)

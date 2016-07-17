@@ -3,6 +3,7 @@ package com.lighthouse.awfulandroid.models;
 public class Currently {
 
     private String summary;
+
     private String icon;
     private String pressure;
     private String nearestStormBearing;

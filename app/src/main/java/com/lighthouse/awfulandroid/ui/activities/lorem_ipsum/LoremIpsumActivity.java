@@ -24,7 +24,6 @@ public class LoremIpsumActivity extends BaseActivity {
     @Bind(R.id.text_pager)
     ViewPager viewPager;
 
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

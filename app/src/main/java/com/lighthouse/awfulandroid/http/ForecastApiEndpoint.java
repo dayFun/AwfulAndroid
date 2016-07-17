@@ -13,7 +13,6 @@ public class ForecastApiEndpoint implements Endpoint {
         return this;
     }
 
-
     @Override
     public String getUrl() {
         if(url == null) {

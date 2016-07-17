@@ -1,6 +1,7 @@
 package com.lighthouse.awfulandroid.ui.bugs;
 
 import android.content.Context;
+import android.databinding.Observable;
 import android.view.View;
 
 public class BugButtonClickListener implements View.OnLongClickListener {

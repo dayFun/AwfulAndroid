@@ -1,0 +1,20 @@
+apply plugin: 'checkstyle'
+
+task checkstyle(type: Checkstyle) {
+    description 'Checks if the code meets standards'
+    group 'verification'
+
+    configFile = file('./qa-check/checkstyle.xml')
+    source 'src'
+    include '**/*.java'
+    exclude '**/gen/**'
+
+    classpath = files()
+    ignoreFailures = false
+}
+
+checkstyle {
+    configFile = file("${project.rootDir}/qa-check/checkstyle.xml")
+    toolVersion = '7.0'
+}
+

@@ -1,6 +1,5 @@
 package com.lighthouse.awfulandroid.ui.activities.login;
 
-
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 import android.test.suitebuilder.annotation.LargeTest;
